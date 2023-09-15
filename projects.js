@@ -1,12 +1,12 @@
 
 function paulaTalk() {
-    let speech = document.getElementById("paula");
-    speech.innerHTML = " P.A.U.L.A. The Personal Application and Utility for Lists and Appointments is designed to assist with general tasks by making a list of things that need to get done.";
+    let speech = document.getElementById("note-taker");
+    speech.innerHTML = " This app will take notes. Very handy when needing to list things that need to get done";
 }
 
 function paulaLabel() {
-    let speech = document.getElementById("paula");
-    speech.innerHTML = " P.A.U.L.A. ";
+    let speech = document.getElementById("note-taker");
+    speech.innerHTML = " Note Taker ";
 }
 
 function ticTacToe() {
@@ -16,7 +16,7 @@ function ticTacToe() {
 
 function tacToe() {
     let speech = document.getElementById("tic-tac-toe");
-    speech.innerHTML = " Tic Tac Toe ";
+    speech.innerHTML = " Rock Paper Scissors ";
 }
 
 function gameInfo() {
