@@ -14,7 +14,7 @@
 }
 
 
-#name1 {
+#job-desired {
     font-size: xx-large;
     font-weight: bold;
     color: #275;
@@ -39,7 +39,7 @@
     100% {color: #275;}
 }
 
-#name-stake {
+#page-title {
     position: fixed;
     top: 30%;
     left: 70%;
@@ -50,9 +50,9 @@
         background-repeat: repeat-y;
     }
 
-    #name-stake {
+    #page-title {
         position: fixed;
-        top: 0%;
+        top: 10%;
         left: 40%;
     }
 }
