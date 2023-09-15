@@ -1,0 +1,58 @@
+#landing-page {
+    background-color: #181818;
+    color: #FFF;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#back-drop {
+    position: fixed;    
+    height: 100%;
+    width: 100%;
+    z-index: -5;
+    transform: translate(0%, 0%) scale(1.2,1.01);
+}
+
+
+#name1 {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #275;
+    
+}
+
+#name {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #275;
+    animation: shimmer;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+}
+
+@keyframes shimmer {
+    0% {color: #275;}
+    20% {color: #5FC; text-shadow: 0px 0px 5px #0F0, 0px 0px 10px #FFF;}
+    40% {color: #275; text-shadow: 0px 0px 0px #000;}
+    100% {color: #275;}
+}
+
+#name-stake {
+    position: fixed;
+    top: 30%;
+    left: 70%;
+}
+
+@media (max-width: 1000px) {
+    #back-drop {
+        background-repeat: repeat-y;
+    }
+
+    #name-stake {
+        position: fixed;
+        top: 0%;
+        left: 40%;
+    }
+}

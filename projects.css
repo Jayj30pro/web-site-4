@@ -1,0 +1,93 @@
+#projects-page {
+    background-color: #181818;
+    color: #FFF;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#back-drop {
+    background-image: url(Icons/onusbs-background2.png);
+    background-repeat: no-repeat; /* add repeat-y media query*/
+    background-size: 100%;
+    position: fixed;
+    height: 100%;
+    width: 95%;
+    z-index: -5;
+    transform: translate(5%, 5%);
+    
+}
+
+#name-stake {
+    font-size: 40px;
+    height: 80px;
+    width: 85%;
+    transform: translate(15%, 0%);
+}
+
+
+#project-show-case {
+    height: 430px;
+    width: 85%;
+    transform: translate(15%, 0%);
+    filter: opacity(.85);
+    place-items: center;
+    justify-content: center;
+    display: grid;
+    grid-gap: 5%;
+    grid-template-rows: 45% 45%;
+    grid-template-columns: 40% 40%;
+    grid-template-areas:
+        "paula tac-toe"
+        "game freelance";
+
+}
+
+#project-show-case a {
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+.project-tile {
+    height: 70%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #042;
+    font-size: 30px;
+    border-radius: 9%;
+    transition: transform 1s;
+    
+    
+    
+}
+
+.project-tile:hover {
+    transform: scale(1.4);
+    font-size: 18px;
+    
+}
+
+.project-image {
+    width: 80%;
+    height: 30%;
+}
+
+#paula {grid-area: paula;}
+#tic-tac-toe{grid-area: tac-toe;}
+#video-game{grid-area: game;}
+#frelancer{grid-area: freelance;}
+
+@media (max-width: 1000px) {
+    .project-tile {
+        font-size: 20px;
+    }
+    .project-tile:hover {
+        font-size: 12px;
+    }
+    #back-drop {
+        background-repeat: repeat-y;
+    }
+}

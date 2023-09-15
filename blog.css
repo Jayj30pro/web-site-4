@@ -1,0 +1,71 @@
+
+#blog-page {
+    background-color: #181818;
+    color: #FFF;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#back-drop {
+    background-image: url(Icons/onusbs-background2.png);
+    background-repeat: no-repeat; /* add repeat-y media query*/
+    background-size: 100%;
+    position: fixed;
+    height: 100%;
+    width: 95%;
+    z-index: -5;
+    transform: translate(5%, 5%);
+    
+}
+
+#name-stake {
+    height: 300px;
+    width: 85%;
+    transform: translate(15%, 0%);
+    font-size: 40px;
+}
+
+#writing-area {
+    align-items: center;
+    transform: translate(-5%, 0%);
+}
+
+
+.blog-entry {
+    height: 900px;
+    width: 80%;
+    background: linear-gradient(#ca2,#550,#971);
+    filter: opacity(0.85);
+    
+}
+
+.blog-image {
+    height: 95%;
+    width: 98%;
+    transform: translate(0%,2%);
+
+}
+
+.entry-info{
+    height: 80px;
+    font-size: 20px;
+}
+
+#second-blog {
+    font-size: 30px;
+}
+
+#second-blog a {
+    color: #0FF;
+}
+
+@media (max-width: 1000px) {
+    #back-drop {
+        background-repeat: repeat-y;
+    }
+
+    #blog-page {
+    max-height: 640px;
+    }
+}
+

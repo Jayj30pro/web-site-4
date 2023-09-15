@@ -1,0 +1,145 @@
+<!-- Java info page-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Java info </title>
+    <style>
+        #info-area {
+            background-color: #181818;
+            color: #FFF;
+            font-family: 'Times New Roman', Times, serif;
+            text-shadow: 0 0 2px #181818;
+        }
+
+        #background {
+            background-image: url(../Icons/java3.png);
+            background-repeat: no-repeat;
+            background-size: 40%;
+            position: fixed;
+            left: 30%;
+            height: 100%;
+            width: 100%;
+            z-index: -5;
+            filter: brightness(0.5);
+        }
+
+        #info {
+            width: 96%;
+            font-size: 40px;
+            display: flex;
+            height: 300px;
+            transform: translate(2%, 0%);
+        }
+
+        #info p {
+            width: 85%;
+        }
+
+        #back {
+            font-size: 25px;
+            position: fixed;
+            background-color: #73A;
+            top: 87%;
+            left: 85%;
+        }
+
+        #reference {
+            font-size: 25px;
+            position: fixed;
+            top: 80%;
+            left: 2%;
+            color: #3A8;
+        }
+
+        #reference a {
+            color: #46D
+        }
+
+        @media (max-width: 1200px) {
+            #back {
+            font-size: 15px;
+            top: 80%;
+            }
+
+
+            #reference {
+                font-size: 15px;
+                top: 50%;
+                left: 85%;
+
+            }
+
+            #info {
+            width: 70%;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 300px;
+            transform: translate(2%, 0%);
+            }
+
+            #info p {
+            width: 100%;
+
+            }
+
+            #space {
+            width: 100%;
+            
+            }
+        }
+
+        @media (max-width: 1200px) {
+                #back {
+                font-size: 15px;
+                
+            }
+
+            #reference {
+                font-size: 15px;
+                top: 50%;
+                left: 85%;
+
+            }
+
+            #info {
+            width: 70%;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 300px;
+            transform: translate(2%, 0%);
+            }
+
+            #info p {
+            width: 100%;
+
+            }
+
+            #space {
+            width: 100%;
+            
+            }
+        }
+    </style>
+</head>
+<body id="info-area">
+    <div id="background"></div>
+    <div id="info">
+        <p> Java was created at Sun Microsystems by a team led by James Gosling. The goal was to create a language that would allow electronic devices to communicate with one another. The research started in 1991, and along the way, the focus changed to the upcoming world wide web. Java was released in 1995 and revolutionized the industry. Because Java compiles into bytecode and then interprets, one code can run on several machines without modifications to the code.  </p>
+    </div>
+    <div id="reference">
+        <p>Reference</p>
+        <a href="https://www.britannica.com/technology/Java-computer-programming-language"> Britannica </a>
+    </div>
+    <button onclick="history.back()" id="back"> back to skills </button>
+</body>
+</html>
+
+

@@ -1,0 +1,128 @@
+<!-- Jason's real estate-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason's Real Estate</title>
+    <link rel="icon" href="Pics/sources/house-icon.png" type="image/png">
+    <style>
+        #background {
+            background-image: url("Pics/sources/houses.jpeg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            position: fixed;
+            height: 102%;
+            width: 102%;
+            z-index: -5;
+            transform: translate(-1%, -1%);
+        }
+        
+        #housing {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bolder;
+            font-size: 40px;
+            color: #4AF;
+            text-shadow: 0 0 5px #000;
+            
+        }
+
+        #heading {
+            height: 200px;
+            width: 100%;
+            display: flex;
+        }
+
+        #our-message {
+            height: 1000px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .side-image {
+            height: 35%;
+            width: 35%;
+            border-radius: 15%;
+        }
+        .message-text {
+            width: 35%;
+            height: 25%;
+        }
+
+        #questions {
+            background-color: rgba(200, 200, 200, 0.5);
+            border-radius: 15%;
+            padding: 10px;
+        }
+        .quest-text {
+            width: 55%;
+            height: 20px;
+        }
+        #back {
+            width: 100%;
+            font-size: 30px;
+            color: #FF0;
+        }
+        @media (max-width: 1000px) {
+            #background {
+                background-repeat: repeat-y;
+            }
+            #heading {
+            height: 600px;
+            flex-direction: column;
+            }
+            #intro {
+                width: 100%;
+            }
+            #our-message {
+                height: 2000px;
+                width: 100%;
+                display: flex;
+            }
+            .side-image {
+            height: 25%;
+            width: 100%;
+            }
+            .message-text {
+            width: 100%;
+            height: 25%;
+            }
+
+        }
+    </style>
+</head>
+<body id="housing">
+    <div id="background"></div>
+    <div id="heading">
+        <p id="intro">  The best homebuying experience in Colorado Springs happens with Jason's reality. </p>
+        <img src="Pics/sources/jason-real-estate-sign.jpg" alt="realestate-jason">
+        
+    </div>
+    <div id="our-message">
+        <p class="message-text"> At Jason's reality, we will find the smoothest path towards homeownership and guide you to your dream house. You can rest easy with Jason's Reality. </p>
+        <img class="side-image" src="Pics/sources/houses1.jpeg" alt="houses">
+        <br/>
+        <img class="side-image" src="Pics/sources/jason-for-sale.jpg" alt="houses">
+        <form id="questions">
+            <p> Tell us about yourself </p>
+            <label for="user-name">Your Name</label>
+            <br/>
+            <input class="quest-text" name="user-name" type="text" placeholder="Looking for a home" />
+            <br/>
+            <label for="referal">How did you hear about us?</label>
+            <br/>
+            <input class="quest-text" name="referal" type="text" placeholder="Fake Homes & Yards" />
+            <br/>
+            <label for="referal">What is a good email?</label>
+            <br/>
+            <input class="quest-text" name="email" type="email" placeholder="ex: hirejasonforadevjob@fakeemail.com" />
+        </form>
+        <a id="back" href="work-photos.html"><p align="center"> Back to gallery </p></a>    
+    </div>
+    
+</body>
+</html>

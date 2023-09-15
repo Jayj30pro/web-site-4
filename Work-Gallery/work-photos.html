@@ -1,0 +1,111 @@
+<!-- Work Gallery -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Webpage Gallery </title>
+    <link rel="icon" href="../Icons/onusbs-man6.png" type="image/png">
+    <style>
+
+        #page {
+            background-color: #181818;
+            color: #FFF;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #back-drop {
+            background-image: url("../Icons/onusbs-background2.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            position: fixed;
+            height: 102%;
+            width: 102%;
+            z-index: -5;
+            transform: translate(-1%, -5%);
+            
+        }
+
+        a {
+            color: #0d5;
+        }
+
+        .gallery-link {
+            height: 90%;
+            width: 40%;
+        }
+
+        .gallery-image {
+            height: 100%;
+            width: 100%;
+        }
+
+        .gallery-text {
+            height: 10%;
+            width: 40%;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        .gallery {
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 30px;
+            filter: opacity(0.85);
+        }
+        #back {
+            font-size: 30px;
+        }
+
+        @media (max-width: 1000px) {
+            #back-drop {
+                background-repeat: repeat-y;
+            }
+            .gallery{
+                height: 800px;
+            }
+            .gallery-link {
+            height: 40%;
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            }
+            .gallery-image {
+            height: 100%;
+            width: 100%;
+            }
+            .gallery-text {
+                width: 45%;
+                height: 5%;
+
+            }
+            #back {
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body id="page">
+    <div id="back-drop"></div>
+    <div class="gallery">
+        <a href="jason-lawyer.html" class="gallery-link"><img class="gallery-image" src="Pics/jason-lawyer.png" alt="jason-legal"/></a>
+        <a href="jason-motors.html" class="gallery-link"><img class="gallery-image" src="Pics/jason-auto.png" alt="jason-auto"></a>
+        <a href="jason-lawyer.html" class="gallery-text"><p align="center"> Jason Legal </p></a>
+        <a href="jason-motors.html" class="gallery-text"><p align="center"> Jason Auto </p></a>
+    </div>
+    <br/>
+    <div class="gallery">
+        <a href="jason-cpa-taxes.html" class="gallery-link"><img class="gallery-image" src="Pics/jason-tax-practice.png" alt="jason-taxes"/></a>
+        <a href="jason-real-estate.html" class="gallery-link"><img class="gallery-image" src="Pics/real-estate-jason.png" alt="housing"/></a>
+        <a href="jason-cpa-taxes.html" class="gallery-text"><p align="center"> Jason's Taxes </p></a>
+        <a href="jason-real-estate.html" class="gallery-text"><p align="center"> Jason's Real Estate </p></a>
+    </div>
+    <br/><br/>
+    <a id="back" href="../projects.html"> <p align="center"> Back to Projects </p></a>
+</body>
+</html>

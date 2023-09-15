@@ -1,0 +1,8 @@
+DVD Motors
+Most of the videos I have watched on YouTube show how to extract the motor from a DVD drive, which does not look that hard. I head to my local pawn shop and purchase some old broken DVD players. I take them apart and find several motors inside. The videos show a motor different than what the DVD players have inside them. I am unsure if I can use these strange motors in my printer, so I go to YouTube and learn enough about electric motors to identify one from another. I realize that a DVD player does not need to move frequently and accurately from one point on a disc to another. Since it does not require precision, it uses a DC motor instead of a stepper motor. The 3D printer needs stepper motors to ensure precision and accuracy when printing. I head back to the pawn shop and get an old desktop with a DVD-RW drive, only one this time. I find that the DVD-RW does indeed have a stepper motor inside. Now I have found a working motor. I just have to get two more, and I will be ready for 3D printing!
+The 3-D Printing Saga
+September 24, 2022
+Jason Jacobs
+
+
+
