@@ -1,5 +1,5 @@
 
-function noteOn() {
+function noteInfo() {
     let speech = document.getElementById("note-taker");
     speech.innerHTML = " This app will take notes. Very handy when needing to list things that need to get done";
 }
@@ -29,12 +29,12 @@ function vidGame() {
     speech.innerHTML = " The Game ";
 }
 
-function projFreelancer() {
-    let speech = document.getElementById("frelancer");
+function galleryInfo() {
+    let speech = document.getElementById("gallery");
     speech.innerHTML = " A photo gallery of websites ";
 }
 
-function freelance() {
-    let speech = document.getElementById("frelancer");
-    speech.innerHTML = " Gigs ";
+function gallery() {
+    let speech = document.getElementById("gallery");
+    speech.innerHTML = " Gallery ";
 }

@@ -3,79 +3,59 @@
     background-color: #181818;
     color: #FFF;
     font-family: 'Times New Roman', Times, serif;
-    
 }
 
 #back-drop {
     background-image: url(Icons/onusbs-background2.png);
-    background-repeat: no-repeat; /* add repeat-y media query*/
+    background-repeat: no-repeat; 
     background-size: 100%;
     position: fixed;
     height: 100%;
-    width: 95%;
+    width: 100%;
     z-index: -5;
 }
 
-#name-stake {
+#about-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.name-stake {
     font-size: 40px;
-    height: 50px;
-    width: 85%;
-    transform: translate(15%, 0%);
+    width: 100%;
 }
 
 #intro {
-    height: 200px;
-    width: 85%;
+    height: auto;
+    width: 100%;
     display: flex;
-    transform: translate(15%, 30%);
+    margin-bottom: 5%;
 
 }
 
 #about-me {
+    width: 90%;
+    transform: translate(5%,0%);
     font-size: 35px;
     color: rgb(203, 250, 208);
     letter-spacing: 1px;
 }
 
 #profile-pic {
-    height: 80%;
-    width: 45%;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
 }
 
 
-#contact-page {
-    background-color: #181818;
-    color: #FFF;
-    font-family: 'Times New Roman', Times, serif;
-    max-height: 640px;
-}
-
-
-#back-drop {
-    background-image: url(Icons/onusbs-background2.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: fixed;
-    height: 100%;
-    width: 95%;
-    z-index: -5;
-    transform: translate(5%, 5%);
-    
-}
-
-#name-stake {
-    font-size: 40px;
-    height: 150px;
-    width: 85%;
-    transform: translate(15%, 0%);
-}
-
+/*
 #contact-area {
-    width: 85%;
+    width: 100%;
     height: 300px;
     display: grid;
-    transform: translate(18%, 0%);
     grid-template-columns: 30% 30% 30%;
     grid-template-rows: 90% 10%;
     grid-gap: 5%;
@@ -84,8 +64,23 @@
         "linfo  ginfo einfo";
 }
 
+
+#contact-area2 {
+    width: 100%;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 90% 10%;
+    grid-gap: 5%;
+    grid-template-areas:
+        "insta solo youtoo"
+        "iinfo  sinfo yinfo";
+}
+*/
+
 .contact-entry {
     display: flex;
+    height: 50px;
     justify-content: center;
     align-items: center;
     width: 80%;
@@ -118,19 +113,6 @@
 #ghub-cap{grid-area: ginfo;}
 #email-cap{grid-area: einfo;}
 
-
-#contact-area2 {
-    width: 85%;
-    height: 300px;
-    display: grid;
-    transform: translate(18%, 0%);
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 90% 10%;
-    grid-gap: 5%;
-    grid-template-areas:
-        "insta solo youtoo"
-        "iinfo  sinfo yinfo";
-}
 
 #instagram{grid-area: insta;}
 #sololearn{grid-area: solo;}
