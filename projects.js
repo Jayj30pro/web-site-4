@@ -1,10 +1,10 @@
 
-function paulaTalk() {
+function noteOn() {
     let speech = document.getElementById("note-taker");
     speech.innerHTML = " This app will take notes. Very handy when needing to list things that need to get done";
 }
 
-function paulaLabel() {
+function noteOff() {
     let speech = document.getElementById("note-taker");
     speech.innerHTML = " Note Taker ";
 }
