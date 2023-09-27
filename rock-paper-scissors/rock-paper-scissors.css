@@ -1,0 +1,9 @@
+
+
+#game-area {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 500px;
+    background-color: aqua;
+}
