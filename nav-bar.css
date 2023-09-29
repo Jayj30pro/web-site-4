@@ -2,6 +2,8 @@
 #nav-menu {
     display: flex;
     position: fixed;
+    font-size: larger;
+    font-weight: bolder;
     top: 0%;
     left: 0%;
     height: 10%;
