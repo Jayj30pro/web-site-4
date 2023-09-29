@@ -4,6 +4,39 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
     min-height: 500px;
-    background-color: aqua;
+
+}
+
+#message {
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#computer-selection {
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#results {
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+button {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.game-icon{
+    width: 40%;
+    height: 30%;
 }

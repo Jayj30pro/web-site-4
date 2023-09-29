@@ -8,8 +8,24 @@
 </head>
 <body>
     <div id="game-area">
-
+        <p id="message"> Make your selection </p>
+        <p id="computer-selection"></p>
+        <p id="results"></p>
+        <div id="rock">
+            <img src="../Icons/rock.jpeg" class="game-icon" alt="rock"/>
+            <div class="game-button"><button onclick="selectRock()"> Rock </button> </div>
+        </div>
+        <div id="paper">
+            <img src="../Icons/paper.jpeg" class="game-icon" alt="paper"/>
+            <div class="game-button"><button onclick="selectPaper()"> Paper </button> </div>
+        </div>
+        <div id="scissors">
+            <img src="../Icons/scissors.jpeg" class="game-icon" alt="scissors"/>
+            <div class="game-button"><button onclick="selectScissors()"> Scissors </button> </div>
+        </div>
     </div>    
     <a href="../projects.html"> <button> Back to Projects</button> </a>
+
+    <script src="rock-paper-scissors.js"></script>
 </body>
 </html>
