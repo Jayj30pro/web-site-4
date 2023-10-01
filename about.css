@@ -51,76 +51,6 @@
 }
 
 
-/*
-#contact-area {
-    width: 100%;
-    height: 300px;
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 90% 10%;
-    grid-gap: 5%;
-    grid-template-areas:
-        "linkin ghub email"
-        "linfo  ginfo einfo";
-}
-
-
-#contact-area2 {
-    width: 100%;
-    height: 300px;
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 90% 10%;
-    grid-gap: 5%;
-    grid-template-areas:
-        "insta solo youtoo"
-        "iinfo  sinfo yinfo";
-}
-*/
-
-.contact-entry {
-    display: flex;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    filter: opacity(0.85);
-}
-
-.contact-icon {
-    height: 60%;
-    width: 60%;
-    transform: translate(35%, 0%);
-    border-radius: 50%;
-}
-
-.contact-caption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-    width: 80%;
-}
-
-.contact-link {
-    color: #0f7;
-}
-
-#link-in{grid-area: linkin;}
-#ghub{grid-area: ghub;}
-#email{grid-area: email;}
-#link-in-cap{grid-area: linfo;}
-#ghub-cap{grid-area: ginfo;}
-#email-cap{grid-area: einfo;}
-
-
-#instagram{grid-area: insta;}
-#sololearn{grid-area: solo;}
-#youtube{grid-area: youtoo;}
-#instagram-cap{grid-area: iinfo;}
-#sololearn-cap{grid-area: sinfo;}
-#youtube-cap{grid-area: yinfo;}
-
 
 @media (max-width: 1000px) {
     #back-drop {
@@ -137,12 +67,5 @@
         flex-direction: column;
         
     
-    }
-    #email-cap {
-        transform: translate(-5%, 0%);
-    }
-
-    #ghub-cap {
-        transform: translate(-20%, -60%);
     }
 }

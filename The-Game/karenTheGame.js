@@ -3,7 +3,7 @@ const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = 1024;
-canvas.height= 576;
+canvas.height= 550;
 const gravity = 0.5;
 
 
@@ -17,7 +17,7 @@ images.walls.src = "walls.png";
 images.character = new Image();
 images.character.src = "productionDemo.png";
 images.coupon1 = new Image();
-images.coupon1.src = "coupon1.png";
+images.coupon1.src = "coupon2.png";
 images.enemy = new Image();
 images.enemy.src = "employeeSpriteSheet.png";
 

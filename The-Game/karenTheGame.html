@@ -10,7 +10,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
             background-color: #404;
         }
@@ -22,6 +22,7 @@
             right: 2%;
             color: #FFF;
             text-shadow: 0 0 5px #fff;
+            z-index: 10;
         }
         #controls {
             position: fixed;
@@ -31,6 +32,27 @@
             left: 2%;
             color: #FFF;
             text-shadow: 0 0 5px #fff;
+        }
+        #move-buttons {
+            position: fixed;
+            width: 100%;
+            bottom: 5%;
+            opacity: 0.5;
+        }
+        #coupon {
+            position: fixed;
+            width: 100%;
+            bottom: 5%;
+            opacity: 0.5;
+        }
+        button {
+            margin: 10px;
+            font-size: large;
+        }
+        #shot {
+            width: 100%;
+            height: auto;
+            background-color: #404;
         }
     </style>
 </head>
@@ -42,6 +64,15 @@
         <p> D = right </p>
         <p> W = jump </p>
         <p> SPC = fire</p>
+    </div>
+    <div id="coupon" align="left">
+        <button><img src="coupon2.png" alt="coupon" id="shot"></button>
+    </div>
+    <div id="move-buttons" align="center">
+        <button> Jump </button>
+        <br/>
+        <button> Left</button>
+        <button> Right</button>
     </div>
 </body>
 </body>
