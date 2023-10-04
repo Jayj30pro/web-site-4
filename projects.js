@@ -29,12 +29,12 @@ function vidGame() {
     speech.innerHTML = " The Game ";
 }
 
-function galleryInfo() {
-    let speech = document.getElementById("gallery");
+function pythonInfo() {
+    let speech = document.getElementById("python");
     speech.innerHTML = " A photo gallery of websites ";
 }
 
-function gallery() {
-    let speech = document.getElementById("gallery");
+function python() {
+    let speech = document.getElementById("python");
     speech.innerHTML = " Gallery ";
 }

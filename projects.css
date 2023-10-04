@@ -51,7 +51,7 @@
     align-items: center;
     flex-direction: column;
     background-color: #042;
-    font-size: 30px;
+    font-size: 25px;
     border-radius: 9%;
     transition: transform 1s;
     margin: 10px;
@@ -61,9 +61,9 @@
 }
 
 .project-tile:hover {
-    transform: scale(1.4);
-    font-size: 18px;
-    
+    transform: scale(1.1);
+    font-size: 30px;
+    background-color: #075;
 }
 
 .project-image {
