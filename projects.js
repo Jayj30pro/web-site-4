@@ -31,10 +31,10 @@ function vidGame() {
 
 function pythonInfo() {
     let speech = document.getElementById("python");
-    speech.innerHTML = " A photo gallery of websites ";
+    speech.innerHTML = " Gallery of Python Projects ";
 }
 
 function python() {
     let speech = document.getElementById("python");
-    speech.innerHTML = " Gallery ";
+    speech.innerHTML = " Python ";
 }
