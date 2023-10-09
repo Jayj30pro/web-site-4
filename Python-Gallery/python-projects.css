@@ -1,10 +1,32 @@
 #back-drop {
     background-image: url(../Icons/python4.png);
-    background-repeat: no-repeat; /* add repeat-y media query*/
-    background-size: cover;
+    background-repeat:repeat; /* add repeat-y media query*/
     position: fixed;
     height: 100%;
     width: 100%;
     z-index: -5;
     
+}
+
+#project-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 90vh;
+}
+
+.python-project {
+    width: 300px;
+    height: 150px;
+    background-color: #0DD;
+    margin: 20px;
+}
+
+#back {
+    width: 100vw;
+    height: 10vh;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
 }
