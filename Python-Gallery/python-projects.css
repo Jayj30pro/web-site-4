@@ -1,5 +1,5 @@
 #back-drop {
-    background-image: url(../Icons/python4.png);
+    background-image: url(../Icons/python2.jpeg);
     background-repeat:repeat; /* add repeat-y media query*/
     position: fixed;
     height: 100%;
@@ -21,6 +21,12 @@
     height: 150px;
     background-color: #0DD;
     margin: 20px;
+    border-radius: 10%;
+    transition: transform 1s;
+}
+
+.python-project:hover {
+    transform: scale(1.1);
 }
 
 #back {
