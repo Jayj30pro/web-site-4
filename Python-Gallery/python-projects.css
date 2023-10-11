@@ -12,16 +12,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     width: 100vw;
     height: 90vh;
 }
 
 .python-project {
-    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
     height: 150px;
     background-color: #0DD;
     margin: 20px;
-    border-radius: 10%;
+    border-radius: 8%;
     transition: transform 1s;
 }
 
