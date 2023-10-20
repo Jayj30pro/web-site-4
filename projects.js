@@ -9,13 +9,13 @@ function noteOff() {
     speech.innerHTML = " Note Taker ";
 }
 
-function ticTacToe() {
-    let speech = document.getElementById("tic-tac-toe");
-    speech.innerHTML = " This is the classic game of Tic Tac Toe. Play a two-player game or challenge Nicole, the computer opponent. ";
+function rockPaperScissors() {
+    let speech = document.getElementById("rock-paper-scissors");
+    speech.innerHTML = " This is the classic Rock Paper Scissors game. Play against the computer. ";
 }
 
-function tacToe() {
-    let speech = document.getElementById("tic-tac-toe");
+function rps() {
+    let speech = document.getElementById("rock-paper-scissors");
     speech.innerHTML = " Rock Paper Scissors ";
 }
 
