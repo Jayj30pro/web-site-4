@@ -17,7 +17,7 @@
     height: 90vh;
 }
 
-.python-project {
+.gallery-project {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
     transition: transform 1s;
 }
 
-.python-project:hover {
+.gallery-project:hover {
     transform: scale(1.1);
 }
 
