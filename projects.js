@@ -31,10 +31,10 @@ function vidGame() {
 
 function projectsInfo() {
     let speech = document.getElementById("projects");
-    speech.innerHTML = " Gallery of Projects ";
+    speech.innerHTML = " A variety of projects past and present ";
 }
 
 function projects() {
     let speech = document.getElementById("projects");
-    speech.innerHTML = " Projects ";
+    speech.innerHTML = " Project gallery ";
 }
