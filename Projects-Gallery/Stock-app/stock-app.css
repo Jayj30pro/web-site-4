@@ -1,7 +1,14 @@
 #pictures {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: auto;
     justify-content: center;
     
+}
+
+.entry-picture {
+    width: 350px;
+    height: 225px;
+    margin: 25px;
 }
