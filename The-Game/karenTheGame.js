@@ -19,7 +19,7 @@ images.character.src = "productionDemo.png";
 images.coupon1 = new Image();
 images.coupon1.src = "coupon2.png";
 images.enemy = new Image();
-images.enemy.src = "employeeSpriteSheet.png";
+images.enemy.src = "employeeSpriteSheet1.png";
 
 
  
@@ -77,7 +77,7 @@ class EnemyCrew {
     }
 
     draw() {
-        ctx.drawImage(images.enemy, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 2, this.height * 2);
+        ctx.drawImage(images.enemy, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 2, this.height * 2.5);
     }
 
     update() {
@@ -157,7 +157,7 @@ let fire = 0;
 
 function start(){
     karen = new Player();
-    enemies = [new EnemyCrew({x: 150, y:130}),new EnemyCrew({x: 450, y:130})];
+    enemies = [new EnemyCrew({x: 550, y:265}),new EnemyCrew({x: 1850, y:265}),new EnemyCrew({x: 3050, y:115}),new EnemyCrew({x: 4600, y:415})];
     platforms = [new Platform({x: 500, y: 350}), new Platform({x: 1800, y: 350}), new Platform({x: 2600, y: 350}), new Platform({x: 3000, y: 200}), new Platform({x: 7300, y: 200}), new Platform({x: 7000, y: 350})];
     grounds = [new Floor({x: 0, y: 500}), new Floor({x: 500, y: 500}), new Floor({x: 1200, y: 500}), new Floor({x: 1700, y: 500}), new Floor({x: 2600, y: 500}), new Floor({x: 3600, y: 500}), new Floor({x: 4100, y: 500}), new Floor({x: 4600, y: 500}), new Floor({x: 5100, y: 500}), new Floor({x: 5600, y: 500}), new Floor({x: 6100, y: 500}), new Floor({x: 6600, y: 500}), new Floor({x: 7100, y: 500}), new Floor({x: 7600, y: 500})];
     scenery = [new Background()];
@@ -239,6 +239,9 @@ function animate() {
             platforms.forEach(platform => {
                 platform.position.x -= karen.speed;
             });
+            enemies.forEach(crew => {
+                crew.position.x -= karen.speed;
+            });
             grounds.forEach(ground => {
                 ground.position.x -= karen.speed;
             });
@@ -259,7 +262,9 @@ function animate() {
             });
             scenery.forEach(scene => {
                 scene.position.x += karen.speed * 0.6;
-                
+            });
+            enemies.forEach(crew => {
+                crew.position.x += karen.speed;
             });
             scrollPosition -= karen.speed;
 
