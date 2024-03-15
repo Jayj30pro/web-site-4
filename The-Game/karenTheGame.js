@@ -72,12 +72,28 @@ class EnemyCrew {
             y: 0
         }
 
-        this.width = 108.09; 
+        this.width = 107.79; 
         this.height = 60;
     }
 
-    //add draw functions
+    draw() {
+        ctx.drawImage(images.enemy, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 2, this.height * 2);
+    }
+
+    update() {
+        this.draw();
+        if (this.frame.x <= 19) {
+            this.frame.x += 1;
+        }
+        else {
+            this.frame.x = 0;
+        }
+        
+    }   
 }
+
+    //add draw functions
+
 
 
 class Platform {
@@ -141,6 +157,7 @@ let fire = 0;
 
 function start(){
     karen = new Player();
+    enemies = [new EnemyCrew({x: 150, y:130}),new EnemyCrew({x: 450, y:130})];
     platforms = [new Platform({x: 500, y: 350}), new Platform({x: 1800, y: 350}), new Platform({x: 2600, y: 350}), new Platform({x: 3000, y: 200}), new Platform({x: 7300, y: 200}), new Platform({x: 7000, y: 350})];
     grounds = [new Floor({x: 0, y: 500}), new Floor({x: 500, y: 500}), new Floor({x: 1200, y: 500}), new Floor({x: 1700, y: 500}), new Floor({x: 2600, y: 500}), new Floor({x: 3600, y: 500}), new Floor({x: 4100, y: 500}), new Floor({x: 4600, y: 500}), new Floor({x: 5100, y: 500}), new Floor({x: 5600, y: 500}), new Floor({x: 6100, y: 500}), new Floor({x: 6600, y: 500}), new Floor({x: 7100, y: 500}), new Floor({x: 7600, y: 500})];
     scenery = [new Background()];
@@ -174,6 +191,10 @@ function animate() {
     grounds.forEach(ground => {
         ground.draw();
     });
+
+    enemies.forEach(crew => {
+        crew.update();
+    })
     
     karen.update();
 
