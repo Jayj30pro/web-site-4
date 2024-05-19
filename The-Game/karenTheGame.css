@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 90vw;
+    background-color: #404;
+}
+#game-body {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 90%;
+}
+#game-canvas {
+    width: 100%;
+    height: auto;
+}
+#back {
+    position: fixed;
+    font-size: 40px;
+    font-weight: bolder;
+    top: 2%;
+    right: 2%;
+    color: #FFF;
+    text-shadow: 0 0 5px #fff;
+    z-index: 10;
+}
+#controls {
+    position: fixed;
+    font-size: 25px;
+    font-weight: bolder;
+    top: 2%;
+    left: 2%;
+    color: #FFF;
+    text-shadow: 0 0 5px #fff;
+}
+#move-buttons {
+    position: fixed;
+    width: 50%;
+    bottom: 5%;
+    left: 20%;
+    opacity: 0.5;
+    margin-right: 10px;
+}
+#action-buttons {
+    position: fixed;
+    width: 50%;
+    bottom: 5%;
+    right: 20%;
+    opacity: 0.5;
+}
+#coupon {
+    position: fixed;
+    width: 100%;
+    bottom: 5%;
+    opacity: 0.5;
+}
+button {
+    margin: 10px;
+    font-size: large;
+}
+#shot {
+    width: 100%;
+    height: auto;
+    background-color: #404;
+}

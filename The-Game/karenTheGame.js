@@ -1,5 +1,5 @@
 
-const canvas = document.querySelector('canvas');
+const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d');
 
 canvas.width = 1024;
@@ -22,7 +22,8 @@ images.enemy = new Image();
 images.enemy.src = "employeeSpriteSheet1.png";
 
 
- 
+
+
 
 class Player {
     constructor() {
@@ -165,6 +166,7 @@ function start(){
     scenery = [new Background()];
     scrollPosition = 0;
     projectile = 0;
+    
 }
 const keys = {
     right: {
@@ -174,6 +176,9 @@ const keys = {
         pressed: false
     }
 }
+
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
 
 //**************************/ animaiton loop **************************************************
 
@@ -359,27 +364,25 @@ start();
 animate();
 
 
-
-
-window.addEventListener("keydown", ({ keyCode }) => {
-    console.log(keyCode);
-    switch (keyCode) {
-        case 65:
+window.addEventListener("keydown", (event) => {
+    let code = event.code;
+    switch (code) {
+        case "KeyA":
             keys.left.pressed = true;
             direction = 2;
             break;
-        case 83: // down
+        case "KeyS": // down
             break;
-        case 68:
+        case "KeyD":
             keys.right.pressed = true;
             direction = 1;
             break;
-        case 87:
+        case "KeyW":
             if (karen.velocity.y ==0){
                 karen.velocity.y -= 12;
             }
             break;
-        case 32:
+        case "Space":
             if (direction == 2 && projectile == 0) {
                 fire = 2;
                 fireCoupon();
@@ -393,18 +396,18 @@ window.addEventListener("keydown", ({ keyCode }) => {
     }
 });
 
-window.addEventListener("keyup", ({ keyCode }) => {
-    //console.log(keyCode);
-    switch (keyCode) {
-        case 65:
+window.addEventListener("keyup", (event) => {
+    let code = event.code;
+    switch (code) {
+        case "KeyA":
             keys.left.pressed = false;
             break;
-        case 83:
+        case "KeyS":
             break;
-        case 68:
+        case "KeyD":
             keys.right.pressed = false;
             break;
-        case 87:
+        case "KeyW":
             break;
     
 
