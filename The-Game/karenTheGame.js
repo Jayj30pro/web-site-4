@@ -450,7 +450,12 @@ const shootCoupon = () => {
     }
 }
 
-//mouse 
+// Prevent long-press context menu
+const preventContextMenu = (event) => {
+    event.preventDefault();
+};
+
+// Mouse events
 couponFire.addEventListener('mousedown', shootCoupon);
 jump.addEventListener('mousedown', jumpUp);
 left.addEventListener('mousedown', goLeft);
@@ -459,15 +464,53 @@ left.addEventListener('mouseout', stopLeft);
 right.addEventListener('mousedown', goRight);
 right.addEventListener('mouseup', stopRight);
 right.addEventListener('mouseout', stopRight);
-//touchscreen
+
+// Touch events
 couponFire.addEventListener('touchstart', shootCoupon);
 jump.addEventListener('touchstart', jumpUp);
 left.addEventListener('touchstart', goLeft);
 left.addEventListener('touchend', stopLeft);
-//left.addEventListener('touchcancel', stopLeft);
-left.addEventListener('touchmove', stopLeft);
+left.addEventListener('touchcancel', stopLeft);
 right.addEventListener('touchstart', goRight);
 right.addEventListener('touchend', stopRight);
-//right.addEventListener('touchcancel', stopRight);
-right.addEventListener('touchmove', stopRight);
+right.addEventListener('touchcancel', stopRight);
 
+// Handle multiple touch points
+const handleTouchStart = (event) => {
+    event.preventDefault();
+    for (let touch of event.changedTouches) {
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target === left) goLeft();
+        if (target === right) goRight();
+        if (target === jump) jumpUp();
+        if (target === couponFire) shootCoupon();
+    }
+};
+
+const handleTouchEnd = (event) => {
+    event.preventDefault();
+    for (let touch of event.changedTouches) {
+        const target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target === left) stopLeft();
+        if (target === right) stopRight();
+    }
+};
+
+// Adding event listeners to manage touch points
+left.addEventListener('touchstart', handleTouchStart);
+right.addEventListener('touchstart', handleTouchStart);
+jump.addEventListener('touchstart', handleTouchStart);
+couponFire.addEventListener('touchstart', handleTouchStart);
+
+left.addEventListener('touchend', handleTouchEnd);
+right.addEventListener('touchend', handleTouchEnd);
+jump.addEventListener('touchend', handleTouchEnd);
+couponFire.addEventListener('touchend', handleTouchEnd);
+
+left.addEventListener('touchcancel', handleTouchEnd);
+right.addEventListener('touchcancel', handleTouchEnd);
+jump.addEventListener('touchcancel', handleTouchEnd);
+couponFire.addEventListener('touchcancel', handleTouchEnd);
+
+// Prevent long-press context menu
+document.addEventListener('contextmenu', preventContextMenu);
