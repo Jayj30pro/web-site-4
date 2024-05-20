@@ -5,6 +5,10 @@ const ctx = canvas.getContext('2d');
 canvas.width = 1024;
 canvas.height= 550;
 const gravity = 0.5;
+const left = document.getElementById("left");
+const right = document.getElementById("right");
+const jump = document.getElementById("jump");
+const couponFire = document.getElementById("coupon-fire");
 
 
 const images = {};
@@ -413,4 +417,57 @@ window.addEventListener("keyup", (event) => {
 
     }
 });
+const goLeft = () => {
+    keys.left.pressed = true;
+    direction = 2;
+}
+const stopLeft = () => {
+    keys.left.pressed = false;
+}
+
+const goRight = () => {
+    keys.right.pressed = true;
+    direction = 1;
+}
+const stopRight = () => {
+    keys.right.pressed = false;
+}
+
+const jumpUp = () => {
+    if (karen.velocity.y ==0){
+        karen.velocity.y -= 12;
+    }
+}
+
+const shootCoupon = () => {
+    if (direction == 2 && projectile == 0) {
+        fire = 2;
+        fireCoupon();
+    }
+    else if (direction == 1 && projectile == 0){
+        fire = 1;
+        fireCoupon();
+    }
+}
+
+//mouse 
+couponFire.addEventListener('mousedown', shootCoupon);
+jump.addEventListener('mousedown', jumpUp);
+left.addEventListener('mousedown', goLeft);
+left.addEventListener('mouseup', stopLeft);
+left.addEventListener('mouseout', stopLeft);
+right.addEventListener('mousedown', goRight);
+right.addEventListener('mouseup', stopRight);
+right.addEventListener('mouseout', stopRight);
+//touchscreen
+couponFire.addEventListener('touchstart', shootCoupon);
+jump.addEventListener('touchstart', jumpUp);
+left.addEventListener('touchstart', goLeft);
+left.addEventListener('touchend', stopLeft);
+//left.addEventListener('touchcancel', stopLeft);
+left.addEventListener('touchmove', stopLeft);
+right.addEventListener('touchstart', goRight);
+right.addEventListener('touchend', stopRight);
+//right.addEventListener('touchcancel', stopRight);
+right.addEventListener('touchmove', stopRight);
 
