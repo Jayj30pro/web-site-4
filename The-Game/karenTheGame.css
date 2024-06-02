@@ -10,6 +10,7 @@ body {
 #game-body {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     height: auto;
     width: 90%;
 }
@@ -38,7 +39,7 @@ body {
     text-shadow: 0 0 5px #fff;
 }
 #move-buttons {
-    position: fixed;
+    /* position: fixed; */
     width: 50%;
     bottom: 5%;
     left: 20%;
@@ -46,7 +47,7 @@ body {
     margin-right: 10px;
 }
 #action-buttons {
-    position: fixed;
+    /* position: fixed; */
     width: 50%;
     bottom: 5%;
     right: 20%;
