@@ -40,7 +40,7 @@ body {
 }
 #move-buttons {
     /* position: fixed; */
-    width: 50%;
+    width: 33%;
     bottom: 5%;
     left: 20%;
     opacity: 0.5;
@@ -48,14 +48,14 @@ body {
 }
 #action-buttons {
     /* position: fixed; */
-    width: 50%;
+    width: 33%;
     bottom: 5%;
     right: 20%;
     opacity: 0.5;
 }
 #coupon {
-    position: fixed;
-    width: 100%;
+    /* position: fixed; */
+    width: 33%;
     bottom: 5%;
     opacity: 0.5;
 }
@@ -64,8 +64,8 @@ button {
     font-size: large;
 }
 #shot {
-    width: 100%;
-    height: auto;
+    width: 200px;
+    /* height: auto; */
     background-color: #404;
 }
 
