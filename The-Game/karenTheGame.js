@@ -9,6 +9,7 @@ const left = document.getElementById("left");
 const right = document.getElementById("right");
 const jump = document.getElementById("jump");
 const couponFire = document.getElementById("coupon-fire");
+const shot = document.getElementById("shot");
 
 
 const images = {};
@@ -456,6 +457,7 @@ const preventContextMenu = (event) => {
 };
 
 // Mouse events
+shot.addEventListener('mousedown', shootCoupon);
 couponFire.addEventListener('mousedown', shootCoupon);
 jump.addEventListener('mousedown', jumpUp);
 left.addEventListener('mousedown', goLeft);
@@ -466,6 +468,7 @@ right.addEventListener('mouseup', stopRight);
 right.addEventListener('mouseout', stopRight);
 
 // Touch events
+shot.addEventListener('touchstart', shootCoupon);
 couponFire.addEventListener('touchstart', shootCoupon);
 jump.addEventListener('touchstart', jumpUp);
 left.addEventListener('touchstart', goLeft);
@@ -501,16 +504,19 @@ left.addEventListener('touchstart', handleTouchStart);
 right.addEventListener('touchstart', handleTouchStart);
 jump.addEventListener('touchstart', handleTouchStart);
 couponFire.addEventListener('touchstart', handleTouchStart);
+shot.addEventListener('touchstart', handleTouchStart);
 
 left.addEventListener('touchend', handleTouchEnd);
 right.addEventListener('touchend', handleTouchEnd);
 jump.addEventListener('touchend', handleTouchEnd);
 couponFire.addEventListener('touchend', handleTouchEnd);
+shot.addEventListener('touchend', handleTouchEnd);
 
 left.addEventListener('touchcancel', handleTouchEnd);
 right.addEventListener('touchcancel', handleTouchEnd);
 jump.addEventListener('touchcancel', handleTouchEnd);
 couponFire.addEventListener('touchcancel', handleTouchEnd);
+shot.addEventListener('touchcancel', handleTouchEnd);
 
 // Prevent long-press context menu
 document.addEventListener('contextmenu', preventContextMenu);
