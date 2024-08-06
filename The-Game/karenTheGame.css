@@ -38,17 +38,26 @@ body {
     color: #FFF;
     text-shadow: 0 0 5px #fff;
 }
+#all-controls {
+    display: flex;
+    width: 100%;
+    min-height: 40px;
+    max-height: 20%;
+    justify-content: space-evenly;
+    align-items: center;
+}
 #move-buttons {
     /* position: fixed; */
-    width: 33%;
+    width: 25%;
     bottom: 5%;
     left: 20%;
     opacity: 0.5;
-    margin-right: 10px;
+    align-items: center;
+    
 }
 #action-buttons {
     /* position: fixed; */
-    width: 33%;
+    width: 25%;
     bottom: 5%;
     right: 20%;
     opacity: 0.5;
