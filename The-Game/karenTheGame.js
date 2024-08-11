@@ -286,7 +286,7 @@ function animate() {
     }
 
     
-    // platform collision detection
+    // platform and ground collision detection
     platforms.forEach(platform => {    
         if (karen.position.y + karen.height <= platform.position.y && karen.position.y + karen.height + karen.velocity.y >= platform.position.y && karen.position.x + karen.width >= platform.position.x && karen.position.x + 100 <= platform.position.x + platform.width) {
             karen.velocity.y = 0;
@@ -298,7 +298,22 @@ function animate() {
         }
     });
 
-    // add coupon collision here
+    // coupon collision detection
+
+    enemies.forEach(enemy => {
+        console.log("couponx ",projectile.couponX);
+        if(projectile.couponX == enemy.position.x && projectile > 0){
+            projectile = 0;
+            projectilePosition = 0;
+
+        }
+    });
+        
+
+
+
+
+    // enemy collision detection
 
 
 
