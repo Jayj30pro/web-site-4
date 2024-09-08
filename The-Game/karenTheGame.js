@@ -302,11 +302,11 @@ function animate() {
 
     enemies.forEach(enemy => {
         console.log("couponx ",projectile.couponX);
-        if(projectile.couponX == enemy.position.x && projectile > 0){
-            projectile = 0;
-            projectilePosition = 0;
+        // if(projectile.couponX == enemy.position.x && projectile > 0){
+        //     projectile = 0;
+        //     projectilePosition = 0;
 
-        }
+        // }
     });
         
 
