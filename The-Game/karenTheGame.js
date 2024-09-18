@@ -292,17 +292,15 @@ function animate() {
             karen.velocity.y = 0;
         }
     });
-    grounds.forEach(platform => {    
-        if (karen.position.y + karen.height <= platform.position.y && karen.position.y + karen.height + karen.velocity.y >= platform.position.y && karen.position.x + karen.width >= platform.position.x && karen.position.x + 100 <= platform.position.x + platform.width) {
+    grounds.forEach(ground => {    
+        if (karen.position.y + karen.height <= ground.position.y && karen.position.y + karen.height + karen.velocity.y >= ground.position.y && karen.position.x + karen.width >= ground.position.x && karen.position.x + 100 <= ground.position.x + ground.width) {
             karen.velocity.y = 0;
         }
     });
 
     // coupon collision detection
+ 
 
-    // enemies.forEach(enemy => {
-        
-    // });
 
     enemies = enemies.filter(enemy => {
         if (projectile > 0) {
@@ -318,7 +316,10 @@ function animate() {
             
         return true; // Keep this enemy
     });
+
     
+
+
         // if(projectile.couponX == enemy.position.x && projectile > 0){
         //     projectile = 0;
         //     projectilePosition = 0;
@@ -332,7 +333,17 @@ function animate() {
 
     // enemy collision detection
 
+    enemies.forEach(enemy => {
+        
+            if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
+                if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
+                    console.log("I'm HIT!!!");
+                    start();
 
+                    
+                }
+            }
+    });
 
     // end of level                    ---------- Make it more fancy
     if (scrollPosition > 7100){
