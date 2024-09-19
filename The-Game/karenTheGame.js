@@ -127,7 +127,7 @@ class EnemyManager {
 
     update() {
         this.draw();
-        if (this.frame.x <= 19) {
+        if (this.frame.x <= 19) { //frame check
             this.frame.x += 1;
         }
         else {
