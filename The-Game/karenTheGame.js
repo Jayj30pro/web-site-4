@@ -25,6 +25,8 @@ images.coupon1 = new Image();
 images.coupon1.src = "coupon2.png";
 images.enemy = new Image();
 images.enemy.src = "employeeSpriteSheet1.png";
+images.boss = new Image();
+images.boss.src = "placeFileNameHere";
 
 
 
@@ -101,7 +103,39 @@ class EnemyCrew {
 
 // add Boss enemy
     
+class EnemyManager {
+    constructor({ x, y }) {
+        this.position = {
+            x: x,
+            y: y
+        }
 
+        this.frame = {
+            x: 0,
+            y: 0
+        }
+
+        //adjust this 
+        this.width = 107.79; 
+        this.height = 60;
+    }
+    //draw functions
+
+    draw() {
+        ctx.drawImage(images.boss, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 2, this.height * 2.5);
+    }
+
+    update() {
+        this.draw();
+        if (this.frame.x <= 19) {
+            this.frame.x += 1;
+        }
+        else {
+            this.frame.x = 0;
+        }
+        
+    }   
+}
 
 
 class Platform {
@@ -171,6 +205,7 @@ function start(){
     scenery = [new Background()];
     scrollPosition = 0;
     projectile = 0;
+    projectilePosition = 0;
     
 }
 const keys = {
@@ -338,6 +373,8 @@ function animate() {
             if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
                 if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
                     console.log("I'm HIT!!!");
+                    projectile = 0;
+                    projectilePosition = 0;
                     start();
 
                     
