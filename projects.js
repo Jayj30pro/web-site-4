@@ -1,12 +1,22 @@
 
-function noteInfo() {
-    let speech = document.getElementById("note-taker");
-    speech.innerHTML = " This app will take notes. Very handy when needing to list things that need to get done";
+// function noteInfo() {
+//     let speech = document.getElementById("note-taker");
+//     speech.innerHTML = " This app will take notes. Very handy when needing to list things that need to get done";
+// }
+
+// function noteOff() {
+//     let speech = document.getElementById("note-taker");
+//     speech.innerHTML = " Note Taker ";
+// }
+
+function scientificCalculatorInfo() {
+    let speech = document.getElementById("scientific-calculator");
+    speech.innerHTML = " This calculator goes beyond simple math and employs advanced formulas and functions.";
 }
 
-function noteOff() {
-    let speech = document.getElementById("note-taker");
-    speech.innerHTML = " Note Taker ";
+function scientificCalculatorOff() {
+    let speech = document.getElementById("scientific-calculator");
+    speech.innerHTML = " Scienfific Calculator ";
 }
 
 function rockPaperScissors() {
