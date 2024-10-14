@@ -22,18 +22,45 @@
 #page-title {
     font-size: 40px;
     height: 80px;
-    width: 85%;
-    transform: translate(15%, 130%);
+    width: 100%;
+    transform: translate(0%, 130%);
 }
 
 #name {
     top: 20%;
 }
 
+#cyber {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#cyber img{
+
+}
+.section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #131;
+    fill-opacity: 0.05;
+    
+}
+
+.section-heading p {
+    text-align: center;
+    font-size: 40px;
+    width: 100%;
+
+}
+
 .certs-area {
     height: 3600px;
-    width: 85%;
-    transform: translate(15%, 0%);
+    width: 90%;
+    transform: translate(5%, 0%);
     filter: opacity(0.85);
     display: flex;
     flex-wrap: wrap;
