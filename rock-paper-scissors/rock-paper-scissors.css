@@ -10,24 +10,31 @@
 }
 
 #message {
-    width: 100%;
     text-align: center;
     font-size: larger;
     font-weight: bolder;
+    margin: 20px;
 }
 
-#computer-selection {
+#text-area {
+    display: flex;
     width: 100%;
+    height: 30%;
+    justify-content: center;
+
+}
+#computer-selection {
+    margin: 20px;
     text-align: center;
     font-size: larger;
     font-weight: bolder;
 }
 
 #results {
-    width: 100%;
     text-align: center;
     font-size: larger;
     font-weight: bolder;
+    margin: 20px;
 }
 
 button {
