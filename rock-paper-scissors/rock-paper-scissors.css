@@ -9,13 +9,6 @@
 
 }
 
-#message {
-    text-align: center;
-    font-size: larger;
-    font-weight: bolder;
-    margin: 20px;
-}
-
 #text-area {
     display: flex;
     width: 100%;
@@ -23,16 +16,24 @@
     justify-content: center;
 
 }
+
+#message {
+    text-align: center;
+    
+    font-weight: bolder;
+    margin: 20px;
+}
+
 #computer-selection {
     margin: 20px;
     text-align: center;
-    font-size: larger;
+    
     font-weight: bolder;
 }
 
 #results {
     text-align: center;
-    font-size: larger;
+    
     font-weight: bolder;
     margin: 20px;
 }
@@ -46,4 +47,8 @@ button {
 .game-icon{
     width: 40%;
     height: 30%;
+}
+
+.display-text {
+    font-size: xx-large;
 }
