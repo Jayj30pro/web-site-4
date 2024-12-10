@@ -1,8 +1,14 @@
+let firstNumber = 0;
+let secondNumber = 0;
+let currentFunction = "";
+
 
 function clearScreen() {
     let display = document.getElementById("display");
     
     display.innerHTML = 0;
+    firstNumber = 0;
+    secondNumber = 0;
 }
 
 function one() {
@@ -121,6 +127,27 @@ function zero() {
     }
     else {
         display.innerHTML += 0;
+    }
+    
+}
+
+function add() {
+    if (currentFunction == ""){
+        currentFunction = "+";
+        display.innerHTML += " + ";
+    }
+    
+    
+
+}
+
+function equals() {
+    let display = document.getElementById("display");
+    if (currentFunction != ""){
+        let mathProblem = display.innerHTML.split(" ");
+        firstNumber = mathProblem[0];
+        secondNumber = mathProblem[2];
+        console.log(mathProblem);
     }
     
 }
