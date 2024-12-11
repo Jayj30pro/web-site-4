@@ -9,6 +9,7 @@ function clearScreen() {
     display.innerHTML = 0;
     firstNumber = 0;
     secondNumber = 0;
+    currentFunction = ""
 }
 
 function one() {
@@ -145,9 +146,10 @@ function equals() {
     let display = document.getElementById("display");
     if (currentFunction != ""){
         let mathProblem = display.innerHTML.split(" ");
-        firstNumber = mathProblem[0];
-        secondNumber = mathProblem[2];
+        firstNumber = Number(mathProblem[0]);
+        secondNumber = Number(mathProblem[2]);
         console.log(mathProblem);
+        display.innerHTML = firstNumber + secondNumber;
     }
     
 }
