@@ -137,17 +137,45 @@ function add() {
         display.innerHTML += " + ";
     }
     
-    
 
+}
+
+function subtract() {
+    if (currentFunction == ""){
+        currentFunction = "-";
+        display.innerHTML += " - ";
+    }
 }
 
 function equals() {
     let display = document.getElementById("display");
+    if (currentFunction == ""){
+        console.log("pick a function first");
+    }
     if (currentFunction != ""){
         let mathProblem = display.innerHTML.split(" ");
-        firstNumber = mathProblem[0];
-        secondNumber = mathProblem[2];
+        firstNumber = Number(mathProblem[0]);
+        secondNumber = Number(mathProblem[2]);
+        switch(mathProblem[1]) {
+            case "+":
+                display.innerHTML = firstNumber + secondNumber;
+                break;
+            
+            case "-":
+                display.innerHTML = firstNumber - secondNumber;
+                break;
+
+            case "*":
+                display.innerHTML = firstNumber * secondNumber;
+                break;
+        
+            case "/":
+                display.innerHTML = firstNumber / secondNumber;
+                break;
+        }
         console.log(mathProblem);
+        currentFunction = "";
+    
     }
     
 }
