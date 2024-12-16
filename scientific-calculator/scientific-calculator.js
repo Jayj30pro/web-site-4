@@ -131,6 +131,11 @@ function zero() {
     
 }
 
+function positiveNegative() {
+    let display = document.getElementById("display");
+    
+}
+
 function add() {
     if (currentFunction == ""){
         currentFunction = "+";
@@ -144,6 +149,22 @@ function subtract() {
     if (currentFunction == ""){
         currentFunction = "-";
         display.innerHTML += " - ";
+    }
+}
+
+function divide() {
+    if (currentFunction == ""){
+        currentFunction = "/";
+        display.innerHTML += " / ";
+    }
+    
+
+}
+
+function multiply() {
+    if (currentFunction == ""){
+        currentFunction = "*";
+        display.innerHTML += " * ";
     }
 }
 
