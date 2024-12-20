@@ -133,7 +133,27 @@ function zero() {
 
 function positiveNegative() {
     let display = document.getElementById("display");
+    let result = "";
+    // first number
+    if (currentFunction == ""){
+        let currentNumber = (display.innerHTML);
+        negativeNumber = currentNumber;
+        negativeNumber *= -1;
+        display.innerHTML = negativeNumber;
+    }
+    // second number
+    else {
+        if (currentFunction != ""){
+            let mathProblem = display.innerHTML.split(" ");
+            firstNumber = Number(mathProblem[0]);
+            activeFunction = mathProblem[1];
+            secondNumber = Number(mathProblem[2]);
+            secondNumber *= -1;
+            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+        }    
     
+    }
+    console.log(result);
 }
 
 function add() {
@@ -194,6 +214,7 @@ function equals() {
                 display.innerHTML = firstNumber / secondNumber;
                 break;
         }
+        //log 
         console.log(mathProblem);
         currentFunction = "";
     
