@@ -3,42 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="icon" href="Karen-Icon.png" type="image/png">
     <title> Karen The Video Game </title>
     <link rel="stylesheet" href="karenTheGame.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         
     </style>
 </head>
 <body>
-    <div id="game-body">
-        <canvas id="game-canvas"></canvas>
+    <div class="container-fluid d-flex flex-column vh-90">
+        <div class="row flex-grow-1">
+            <div class="col-12">
+                <canvas id="game-canvas"></canvas>
+            </div>
+
+        </div>
         <a id="back" href="./karenHello.html"> <p align="right"> Home </p></a>
-        <div id="controls">
-            <p> A = left </p>
-            <p> D = right </p>
-            <p> W = jump </p>
-            <p> SPC = fire</p>
+        <!-- <div class="row">
+            <div class="col-12"> -->
+                <div id="all-controls" class="text-center"> 
+                    <!-- Top Buttons -->
+                   <div id="move-buttons">
+                        <div class="game-button" id="left"><button class="btn btn-primary"> << </button></div>
+                        <div class="game-button" id="coupon-fire"><button class="btn btn-danger">Fire</button></div>
+                    </div>                    
+                </div>
+             <!-- </div>
         </div>
-        <div id="all-controls">
-            <div id="move-buttons">
-                <div class="action" id="left" align="center"><button> << </button></div>
-                    <div class="action" id="right" align="center"><button > >> </button></div>
-            </div>
-            <div id="action-buttons">
-                <div class="action" id="coupon-fire" align="center"><button> Fire</button></div>
-                <div class="action" id="jump" align="center"><button > Jump </button></div>
-                <!-- <button><img src="coupon2.png" alt="coupon" id="shot"></button> -->
-            </div>
-        </div>
-        <!-- <div id="coupon">
-            <button><img src="coupon2.png" alt="coupon" id="shot"></button>
+        <div class="row">
+            <div class="col-12">-->
+                <div id="all-controls" class="text-center">
+                    <!-- Bottom Buttons -->
+                     <div id="action-buttons">
+                        <div class="game-button" id="right"><button class="btn btn-primary"> >> </button></div>
+                        <div class="game-button" id="jump"><button  class="btn btn-warning">Jump</button></div>
+                    </div>
+                </div>
+            <!--</div>
         </div> -->
+        
     </div>
-</body>
+    <script src="karenTheGame.js"></script>
 </body>
 </html>
-
-
-<script src="karenTheGame.js"></script>
