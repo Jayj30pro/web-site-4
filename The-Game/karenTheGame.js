@@ -9,6 +9,9 @@ const left = document.getElementById("left");
 const right = document.getElementById("right");
 const jump = document.getElementById("jump");
 const couponFire = document.getElementById("coupon-fire");
+let couponX = 0;
+let couponY = 0;
+
 //const shot = document.getElementById("shot");
 
 
@@ -26,7 +29,7 @@ images.coupon1.src = "coupon2.png";
 images.enemy = new Image();
 images.enemy.src = "employeeSpriteSheet1.png";
 images.boss = new Image();
-images.boss.src = "placeFileNameHere";
+// images.boss.src = "placeFileNameHere";
 
 
 
@@ -194,7 +197,6 @@ let scrollPosition = 0;
 let direction = 1;
 let projectile = 0;
 let projectilePosition = 0;
-let couponY = 0;
 let fire = 0;
 
 function start(){
@@ -217,8 +219,6 @@ const keys = {
     }
 }
 
-canvas.width = canvas.clientWidth;
-canvas.height = canvas.clientHeight;
 
 //**************************/ animaiton loop **************************************************
 
@@ -559,16 +559,16 @@ right.addEventListener('touchend', stopRight);
 right.addEventListener('touchcancel', stopRight);
 
 // Handle multiple touch points
-const handleTouchStart = (event) => {
-    event.preventDefault();
-    for (let touch of event.changedTouches) {
-        const target = document.elementFromPoint(touch.clientX, touch.clientY);
-        if (target === left) goLeft();
-        if (target === right) goRight();
-        if (target === jump) jumpUp();
-        if (target === couponFire) shootCoupon();
-    }
-};
+// const handleTouchStart = (event) => {
+//     event.preventDefault();
+//     for (let touch of event.changedTouches) {
+//         const target = document.elementFromPoint(touch.clientX, touch.clientY);
+//         if (target === left) goLeft();
+//         if (target === right) goRight();
+//         if (target === jump) jumpUp();
+//         if (target === couponFire) shootCoupon();
+//     }
+// };
 
 const handleTouchEnd = (event) => {
     event.preventDefault();
@@ -579,7 +579,7 @@ const handleTouchEnd = (event) => {
     }
 };
 
-// Adding event listeners to manage touch points
+//Adding event listeners to manage touch points
 left.addEventListener('touchstart', handleTouchStart);
 right.addEventListener('touchstart', handleTouchStart);
 jump.addEventListener('touchstart', handleTouchStart);
@@ -600,3 +600,26 @@ couponFire.addEventListener('touchcancel', handleTouchEnd);
 
 // Prevent long-press context menu
 document.addEventListener('contextmenu', preventContextMenu);
+
+function resizeCanvas() {
+    const aspectRatio = 16 / 9; // Adjust based on your game's design (e.g., width:height)
+    
+    // Fit canvas to the available width and maintain aspect ratio
+    const availableWidth = window.innerWidth;
+    const availableHeight = window.innerHeight;
+
+    // Determine the best fit for the canvas
+    if (availableWidth / aspectRatio <= availableHeight) {
+        canvas.width = availableWidth;
+        canvas.height = availableWidth / aspectRatio;
+    } else {
+        canvas.width = availableHeight * aspectRatio;
+        canvas.height = availableHeight;
+    }
+
+    // Adjust the scale of your game elements based on the new canvas size
+    ctx.scale(canvas.width / 1024, canvas.height / 550); // Match original game resolution
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Initial call
