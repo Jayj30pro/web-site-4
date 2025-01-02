@@ -165,8 +165,8 @@ class Floor {
             y: y
         }
 
-        this.width = 500
-        this.height = 100
+        this.width = 500;
+        this.height = 100;
     }
 
     draw() {
@@ -248,20 +248,13 @@ function animate() {
     
     karen.update();
 
+    updateProjectile();
+
+    //experimental debugging function 
+
+    // debugInfo();
 
     // movement
-
-    if (projectile > 0) {
-        ctx.drawImage(images.coupon1, couponX + 50 + projectilePosition, couponY - 30, 80, 50);
-        if (fire ==2){
-            projectileMoveLeft();
-        }
-        else {
-            projectileMoveRight();
-        }
-    }
-        
-    
 
     if (keys.right.pressed) {
         moveRight();
@@ -274,6 +267,7 @@ function animate() {
     }
 
     //scorlling 
+
     if (keys.right.pressed && karen.position.x < 500) {
         karen.velocity.x = karen.speed;
     }
@@ -285,6 +279,9 @@ function animate() {
     }
     else {
         karen.velocity.x = 0;
+
+        
+
 
         if(keys.right.pressed) {
             platforms.forEach(platform => {
@@ -343,13 +340,17 @@ function animate() {
 
     enemies = enemies.filter(enemy => {
         if (projectile > 0) {
-            if (couponY > enemy.position.y - 50 && couponY < enemy.position.y + 50){
-                if (projectilePosition > enemy.position.x - 10 && projectilePosition < enemy.position.x + 10) {
+            if (projectile > 0 &&
+                couponY > enemy.position.y - 50 &&
+                couponY < enemy.position.y + 50 &&
+                projectilePosition > enemy.position.x - 20 &&
+                projectilePosition < enemy.position.x + 20){
+                
                     console.log("got em!!");
                     projectile = 0;
                     projectilePosition = 0;
                     return false; // Remove this enemy
-                }
+                
             }
         }
             
@@ -426,28 +427,38 @@ function shoot() {
 
 function fireCoupon() {
     if (projectile == 0) {
-        projectile += 1;
-        couponY = karen.position.y
-        couponX = karen.position.x
+        projectile = 1;
+        couponY = karen.position.y;
+        couponX = karen.position.x;
     }
 }
 
-function projectileMoveLeft() {
-    projectilePosition -=15;
-    if (projectilePosition < -450) {
-        projectile = 0;
-        projectilePosition = 0;
+function updateProjectile() {
+    if (projectile > 0) {
+        ctx.drawImage(images.coupon1, couponX + 50 + projectilePosition, couponY - 30, 80, 50);
+
+        // Determine direction
+        projectilePosition += (fire === 2 ? -15 : 15);
+
+        // Reset if out of bounds
+        if (projectilePosition < -450 || projectilePosition > canvas.width) {
+            projectile = 0;
+            projectilePosition = 0;
+        }
     }
 }
 
-function projectileMoveRight() {
-    projectilePosition +=15;
-    if (projectilePosition > 800) {
-        projectile = 0;
-        projectilePosition = 0;
-    }
-        
+//experimental debugging function 
+
+function debugInfo() {
+    ctx.fillStyle = "black";
+    ctx.font = "16px Arial";
+    ctx.fillText(`Position: (${karen.position.x.toFixed(1)}, ${karen.position.y.toFixed(1)})`, 10, 20);
+    ctx.fillText(`Scroll: ${scrollPosition}`, 10, 40);
+    ctx.fillText(`Projectile: ${projectile}`, 10, 60);
 }
+
+
         
 start();
 animate();
@@ -563,15 +574,16 @@ right.addEventListener('touchend', stopRight);
 right.addEventListener('touchcancel', stopRight);
 
 // Handle multiple touch points
+
 // const handleTouchStart = (event) => {
-//     event.preventDefault();
-//     for (let touch of event.changedTouches) {
-//         const target = document.elementFromPoint(touch.clientX, touch.clientY);
-//         if (target === left) goLeft();
-//         if (target === right) goRight();
-//         if (target === jump) jumpUp();
-//         if (target === couponFire) shootCoupon();
-//     }
+    // event.preventDefault();
+    // for (let touch of event.changedTouches) {
+    //     const target = document.elementFromPoint(touch.clientX, touch.clientY);
+    //     if (target === left) goLeft();
+    //     if (target === right) goRight();
+    //     if (target === jump) jumpUp();
+    //     if (target === couponFire) shootCoupon();
+    // }
 // };
 
 const handleTouchEnd = (event) => {
@@ -588,7 +600,7 @@ left.addEventListener('touchstart', handleTouchStart);
 right.addEventListener('touchstart', handleTouchStart);
 jump.addEventListener('touchstart', handleTouchStart);
 couponFire.addEventListener('touchstart', handleTouchStart);
-//shot.addEventListener('touchstart', handleTouchStart);
+// shot.addEventListener('touchstart', handleTouchStart);
 
 left.addEventListener('touchend', handleTouchEnd);
 right.addEventListener('touchend', handleTouchEnd);
