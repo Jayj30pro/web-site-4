@@ -29,7 +29,7 @@ images.coupon1.src = "coupon2.png";
 images.enemy = new Image();
 images.enemy.src = "employeeSpriteSheet1.png";
 images.boss = new Image();
-// images.boss.src = "placeFileNameHere";
+images.boss.src = "manager1.png";
 
 
 
@@ -124,6 +124,7 @@ class EnemyManager {
     }
     //draw functions
 
+
     draw() {
         ctx.drawImage(images.boss, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 2, this.height * 2.5);
     }
@@ -188,6 +189,7 @@ class Background {
 
 
 // create items
+let endBoss = new EnemyManager({x:100, y:100});
 let karen = new Player();
 let platforms = [];
 let grounds = [];
@@ -200,6 +202,7 @@ let projectilePosition = 0;
 let fire = 0;
 
 function start(){
+    endBoss = new EnemyManager({x:100, y:100});
     karen = new Player();
     enemies = [new EnemyCrew({x: 550, y:265}),new EnemyCrew({x: 1850, y:265}),new EnemyCrew({x: 3050, y:115}),new EnemyCrew({x: 4000, y:415}),new EnemyCrew({x: 4600, y:415}),new EnemyCrew({x: 5000, y:415}),new EnemyCrew({x: 6000, y:415}),new EnemyCrew({x: 7500, y:415})];
     platforms = [new Platform({x: 500, y: 350}), new Platform({x: 1800, y: 350}), new Platform({x: 2600, y: 350}), new Platform({x: 3000, y: 200}), new Platform({x: 7300, y: 200}), new Platform({x: 7000, y: 350})];
@@ -244,6 +247,7 @@ function animate() {
     })
     
     karen.update();
+
 
     // movement
 
@@ -617,6 +621,7 @@ function resizeCanvas() {
         canvas.height = availableHeight;
     }
 
+    ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transformations
     // Adjust the scale of your game elements based on the new canvas size
     ctx.scale(canvas.width / 1024, canvas.height / 550); // Match original game resolution
 }
