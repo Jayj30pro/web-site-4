@@ -29,7 +29,7 @@ images.coupon1.src = "coupon2.png";
 images.enemy = new Image();
 images.enemy.src = "employeeSpriteSheet1.png";
 images.boss = new Image();
-images.boss.src = "manager1.png";
+images.boss.src = "manager-sprite-sheet.png";
 
 
 
@@ -126,7 +126,7 @@ class EnemyManager {
 
 
     draw() {
-        ctx.drawImage(images.boss, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 2, this.height * 2.5);
+        ctx.drawImage(images.boss, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 3.8, this.height * 3);
     }
 
     update() {
@@ -189,7 +189,7 @@ class Background {
 
 
 // create items
-let endBoss = new EnemyManager({x:100, y:100});
+let endBoss = new EnemyManager({x: 7500, y:400});
 let karen = new Player();
 let platforms = [];
 let grounds = [];
@@ -202,9 +202,10 @@ let projectilePosition = 0;
 let fire = 0;
 
 function start(){
-    endBoss = new EnemyManager({x:100, y:100});
+    endBoss = new EnemyManager({x: 7500, y:400});
+    // endBoss = new EnemyManager({x: 550, y:250});
     karen = new Player();
-    enemies = [new EnemyCrew({x: 550, y:265}),new EnemyCrew({x: 1850, y:265}),new EnemyCrew({x: 3050, y:115}),new EnemyCrew({x: 4000, y:415}),new EnemyCrew({x: 4600, y:415}),new EnemyCrew({x: 5000, y:415}),new EnemyCrew({x: 6000, y:415}),new EnemyCrew({x: 7500, y:415})];
+    enemies = [new EnemyCrew({x: 550, y:265}),new EnemyCrew({x: 1850, y:265}),new EnemyCrew({x: 3050, y:115}),new EnemyCrew({x: 4000, y:415}),new EnemyCrew({x: 4600, y:415}),new EnemyCrew({x: 5000, y:415}),new EnemyCrew({x: 6000, y:415}),new EnemyCrew({x: 7000, y:265})];
     platforms = [new Platform({x: 500, y: 350}), new Platform({x: 1800, y: 350}), new Platform({x: 2600, y: 350}), new Platform({x: 3000, y: 200}), new Platform({x: 7300, y: 200}), new Platform({x: 7000, y: 350})];
     grounds = [new Floor({x: 0, y: 500}), new Floor({x: 500, y: 500}), new Floor({x: 1200, y: 500}), new Floor({x: 1700, y: 500}), new Floor({x: 2600, y: 500}), new Floor({x: 3600, y: 500}), new Floor({x: 4100, y: 500}), new Floor({x: 4600, y: 500}), new Floor({x: 5100, y: 500}), new Floor({x: 5600, y: 500}), new Floor({x: 6100, y: 500}), new Floor({x: 6600, y: 500}), new Floor({x: 7100, y: 500}), new Floor({x: 7600, y: 500})];
     scenery = [new Background()];
@@ -246,6 +247,7 @@ function animate() {
         crew.update();
     })
     
+    endBoss.update();
     karen.update();
 
     updateProjectile();
@@ -284,12 +286,13 @@ function animate() {
 
 
         if(keys.right.pressed) {
-            platforms.forEach(platform => {
-                platform.position.x -= karen.speed;
-            });
+            endBoss.position.x -= karen.speed;
             enemies.forEach(crew => {
                 crew.position.x -= karen.speed;
             });
+            platforms.forEach(platform => {
+                platform.position.x -= karen.speed;
+            });            
             grounds.forEach(ground => {
                 ground.position.x -= karen.speed;
             });
@@ -302,6 +305,10 @@ function animate() {
             
         }
         else if (keys.left.pressed && scrollPosition > 0) {
+            endBoss.position.x += karen.speed;
+            enemies.forEach(crew => {
+                crew.position.x += karen.speed;
+            });
             platforms.forEach(platform => {
                 platform.position.x += karen.speed;
             });
@@ -310,10 +317,7 @@ function animate() {
             });
             scenery.forEach(scene => {
                 scene.position.x += karen.speed * 0.6;
-            });
-            enemies.forEach(crew => {
-                crew.position.x += karen.speed;
-            });
+            });            
             scrollPosition -= karen.speed;
 
             //add move boss left 
@@ -373,19 +377,19 @@ function animate() {
 
     // enemy collision detection
 
-    enemies.forEach(enemy => {
+    // enemies.forEach(enemy => {
         
-            if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
-                if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
-                    console.log("I'm HIT!!!");
-                    projectile = 0;
-                    projectilePosition = 0;
-                    start();
+    //         if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
+    //             if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
+    //                 console.log("I'm HIT!!!");
+    //                 projectile = 0;
+    //                 projectilePosition = 0;
+    //                 start();
 
                     
-                }
-            }
-    });
+    //             }
+    //         }
+    // });
 
     // end of level                    ---------- Make it more fancy
     if (scrollPosition > 7100){
