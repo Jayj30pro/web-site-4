@@ -7,7 +7,7 @@
     <link rel="icon" href="Karen-Icon.png" type="image/png">
     <title> Karen The Video Game </title>
     <link rel="stylesheet" href="karenTheGame.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <style>
         
@@ -24,26 +24,22 @@
         <a id="back" href="./karenHello.html"> <p align="right"> Home </p></a>
         <!-- <div class="row">
             <div class="col-12"> -->
-                <div id="all-controls" class="text-center"> 
+                <div class="all-controls"> 
                     <!-- Top Buttons -->
                    <div id="move-buttons">
-                        <div class="game-button" id="left"><button class="btn btn-primary"> << </button> ( A ) </div>
-                        <div class="game-button" id="coupon-fire"><button class="btn btn-danger">Fire</button> ( SPC ) </div>
+                        <div class="game-button" id="left"><button class="direction-button"> Left ( A )  </button></div>
+                        <div class="game-button" id="coupon-fire"><button id="fire-button">Fire ( SPC ) </button></div>
                     </div>                    
                 </div>
-             <!-- </div>
-        </div>
-        <div class="row">
-            <div class="col-12">-->
-                <div id="all-controls" class="text-center">
+
+                <div class="all-controls">
                     <!-- Bottom Buttons -->
                      <div id="action-buttons">
-                        <div class="game-button" id="right"><button class="btn btn-primary"> >> </button>( D )</div>
-                        <div class="game-button" id="jump"><button  class="btn btn-warning">Jump</button>( W )</div>
+                        <div class="game-button" id="right"><button class="direction-button"> Right ( D )</button></div>
+                        <div class="game-button" id="jump"><button id="jump-button">Jump ( W )</button></div>
                     </div>
                 </div>
-            <!--</div>
-        </div> -->
+
         
     </div>
     <script src="karenTheGame.js"></script>
