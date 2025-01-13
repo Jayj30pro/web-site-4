@@ -125,6 +125,7 @@ class EnemyManager {
         this.attackReady = false;
         this.wasSeen = false;
         this.speed = 3;
+        this.health = 16;
         this.cooldown = 0;
     }
     //draw functions
@@ -198,7 +199,7 @@ class EnemyManager {
                 }
                 if (this.position.x > 800 && this.speed < 0){
                     this.speed *= -1;
-                    this.cooldown += 80
+                    this.cooldown += 60
                     this.attackReady = false;
                 }   
             }
@@ -336,7 +337,7 @@ function animate() {
 
     //experimental debugging function 
 
-    debugInfo();
+    //debugInfo();
 
     // movement
 
@@ -421,23 +422,31 @@ function animate() {
     });
 
     // coupon collision detection
- 
+    
+    if (endBoss.attackReady == false) {
+        if(couponY > endBoss.position.y - 50 &&
+            couponY < endBoss.position.y + 50 &&
+            projectilePosition > endBoss.position.x - 20 &&
+            projectilePosition < endBoss.position.x + 20){
+                endBoss.health -= 1;
+            }
+    }
 
 
     enemies = enemies.filter(enemy => {
-        if (projectile > 0) {
-            if (projectile > 0 &&
-                couponY > enemy.position.y - 50 &&
-                couponY < enemy.position.y + 50 &&
-                projectilePosition > enemy.position.x - 20 &&
-                projectilePosition < enemy.position.x + 20){
+        
+        if (projectile > 0 &&
+            couponY > enemy.position.y - 50 &&
+            couponY < enemy.position.y + 50 &&
+            projectilePosition > enemy.position.x - 20 &&
+            projectilePosition < enemy.position.x + 20){
+            
+                console.log("got em!!");
+                projectile = 0;
+                projectilePosition = 0;
+                return false; // Remove this enemy
                 
-                    console.log("got em!!");
-                    projectile = 0;
-                    projectilePosition = 0;
-                    return false; // Remove this enemy
-                
-            }
+            
         }
             
         return true; // Keep this enemy
@@ -459,26 +468,33 @@ function animate() {
 
     // enemy collision detection
 
-    //*********************************turn back on ********************
 
-    // enemies.forEach(enemy => {
+    if (karen.position.y == 440) {
+        if (karen.position.x > endBoss.position.x +55 && karen.position.x < endBoss.position.x + 80){
+        start();
+        }
+    }
+
+    enemies.forEach(enemy => {
         
-    //         if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
-    //             if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
-    //                 console.log("I'm HIT!!!");
-    //                 projectile = 0;
-    //                 projectilePosition = 0;
-    //                 start();
-
-                    
-    //             }
-    //         }
-    // });
+            if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
+                if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
+                    console.log("I'm HIT!!!");
+                    projectile = 0;
+                    projectilePosition = 0;
+                    start();
+    
+                }
+            }
+    });
 
     // end of level                    ---------- Make it more fancy
-    if (scrollPosition > 7100){
-        console.log("You are the winner!!!");
+    // Check if the boss is defeated
+    if (endBoss.health <= 0) {
+        console.log("Boss defeated! Redirecting to the next level...");
+        window.location.href = "./karenHello.html"; // Replace with your desired URL
     }
+
 
     //death
     if (karen.position.y > canvas.height) {
@@ -544,7 +560,7 @@ function debugInfo() {
     ctx.fillText(`Position: (${karen.position.x.toFixed(1)}, ${karen.position.y.toFixed(1)})`, 10, 20);
     ctx.fillText(`Scroll: ${scrollPosition}`, 10, 40);
     ctx.fillText(`Projectile: ${projectile}`, 10, 60);
-    ctx.fillText(`Cooldown: ${endBoss.cooldown}`, 10, 80);
+    ctx.fillText(`boss Health: ${endBoss.health}`, 10, 80);
 }
 
 
