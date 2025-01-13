@@ -30,7 +30,7 @@ images.coupon1.src = "coupon2.png";
 images.enemy = new Image();
 images.enemy.src = "employeeSpriteSheet1.png";
 images.boss = new Image();
-images.boss.src = "manager1.png";
+images.boss.src = "manager-sprite-sheet2.png";
 
 
 
@@ -119,27 +119,109 @@ class EnemyManager {
             y: 0
         }
 
-        //adjust this 
+        
         this.width = 107.79; 
         this.height = 60;
+        this.onscreen = false;
+        this.attackReady = false;
+        this.wasSeen = false;
+        this.speed = 3;
+        this.cooldown = 0;
     }
     //draw functions
 
 
     draw() {
-        ctx.drawImage(images.boss, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 2, this.height * 2.5);
+        ctx.drawImage(images.boss, this.width * this.frame.x, this.height * this.frame.y, this.width, this.height, this.position.x, this.position.y - this.height + 15, this.width * 3.8, this.height * 3);
     }
 
     update() {
         this.draw();
-        if (this.frame.x <= 19) { //frame check
-            this.frame.x += 1;
+        this.positionCheck();
+        this.attack();
+        if (this.attackReady){
+
+            if (this.frame.x <= 19) { 
+                this.frame.x += 1;
+            }
+            else {
+                this.frame.x = 0;
+                this.frame.y += 1;
+                
+            }
+            if (this.frame.y > 3) {
+                this.frame.y = 0;
+
+            }
         }
         else {
-            this.frame.x = 0;
+            this.frame.y = 0;
+            if (this.frame.x <= 19) { 
+                this.frame.x += 1;
+            }
+            else {
+                this.frame.x = 0;
+            }
+        }
+                        
         }
         
-    }   
+        
+    
+
+    positionCheck(){
+        if (scrollPosition > 6700) { 
+            this.onscreen = true;
+            this.wasSeen = true;dddd
+        }
+        if (scrollPosition < 6000) {
+            this.onscreen = false;
+        }
+
+        // if (scrollPosition > 6950) { //test
+        //     this.onscreen = true;
+        //     this.wasSeen = true;
+        // }
+
+        
+        // if (scrollPosition < 6750) { //test
+        //     this.onscreen = false;
+        // }
+    }
+
+    attack() {
+        if (this.onscreen) {
+            if (this.cooldown == 0) {
+                this.attackReady = true;
+                this.position.x -= this.speed;
+                if (this.position.x < -200){
+                    this.speed *= -1;
+                }
+                if (this.position.x > 800 && this.speed < 0){
+                    this.speed *= -1;
+                    this.cooldown += 80
+                    this.attackReady = false;
+                }   
+            }
+            else {
+                this.attackReady = false;
+                this.cooldown -= 1;
+            }
+        }
+        else {
+            this.frame.y = 0;
+            this.attackReady = false;
+            this.speed = 3;
+            if (this.wasSeen){
+                this.position.x = 1500;
+                this.wasSeen = false;
+                this.cooldown = 0;
+                
+            }
+            
+
+        }
+    }
 }
 
 
@@ -190,7 +272,7 @@ class Background {
 
 
 // create items
-let endBoss = new EnemyManager({x:100, y:100});
+let endBoss = new EnemyManager({x: 7500, y:400});
 let karen = new Player();
 let platforms = [];
 let grounds = [];
@@ -203,9 +285,10 @@ let projectilePosition = 0;
 let fire = 0;
 
 function start(){
-    endBoss = new EnemyManager({x:100, y:100});
+    endBoss = new EnemyManager({x: 7500, y:400});
+    //endBoss = new EnemyManager({x: 6550, y:400});
     karen = new Player();
-    enemies = [new EnemyCrew({x: 550, y:265}),new EnemyCrew({x: 1850, y:265}),new EnemyCrew({x: 3050, y:115}),new EnemyCrew({x: 4000, y:415}),new EnemyCrew({x: 4600, y:415}),new EnemyCrew({x: 5000, y:415}),new EnemyCrew({x: 6000, y:415}),new EnemyCrew({x: 7500, y:415})];
+    enemies = [new EnemyCrew({x: 550, y:265}),new EnemyCrew({x: 1850, y:265}),new EnemyCrew({x: 3050, y:115}),new EnemyCrew({x: 4000, y:415}),new EnemyCrew({x: 4600, y:415}),new EnemyCrew({x: 5000, y:415}),new EnemyCrew({x: 6000, y:415}),new EnemyCrew({x: 7000, y:265}),new EnemyCrew({x: 7300, y:115})];
     platforms = [new Platform({x: 500, y: 350}), new Platform({x: 1800, y: 350}), new Platform({x: 2600, y: 350}), new Platform({x: 3000, y: 200}), new Platform({x: 7300, y: 200}), new Platform({x: 7000, y: 350})];
     grounds = [new Floor({x: 0, y: 500}), new Floor({x: 500, y: 500}), new Floor({x: 1200, y: 500}), new Floor({x: 1700, y: 500}), new Floor({x: 2600, y: 500}), new Floor({x: 3600, y: 500}), new Floor({x: 4100, y: 500}), new Floor({x: 4600, y: 500}), new Floor({x: 5100, y: 500}), new Floor({x: 5600, y: 500}), new Floor({x: 6100, y: 500}), new Floor({x: 6600, y: 500}), new Floor({x: 7100, y: 500}), new Floor({x: 7600, y: 500})];
     scenery = [new Background()];
@@ -247,13 +330,14 @@ function animate() {
         crew.update();
     })
     
+    endBoss.update();
     karen.update();
 
     updateProjectile();
 
     //experimental debugging function 
 
-    // debugInfo();
+    debugInfo();
 
     // movement
 
@@ -285,12 +369,13 @@ function animate() {
 
 
         if(keys.right.pressed) {
-            platforms.forEach(platform => {
-                platform.position.x -= karen.speed;
-            });
+            endBoss.position.x -= karen.speed;
             enemies.forEach(crew => {
                 crew.position.x -= karen.speed;
             });
+            platforms.forEach(platform => {
+                platform.position.x -= karen.speed;
+            });            
             grounds.forEach(ground => {
                 ground.position.x -= karen.speed;
             });
@@ -303,6 +388,10 @@ function animate() {
             
         }
         else if (keys.left.pressed && scrollPosition > 0) {
+            endBoss.position.x += karen.speed;
+            enemies.forEach(crew => {
+                crew.position.x += karen.speed;
+            });
             platforms.forEach(platform => {
                 platform.position.x += karen.speed;
             });
@@ -311,10 +400,7 @@ function animate() {
             });
             scenery.forEach(scene => {
                 scene.position.x += karen.speed * 0.6;
-            });
-            enemies.forEach(crew => {
-                crew.position.x += karen.speed;
-            });
+            });            
             scrollPosition -= karen.speed;
 
             //add move boss left 
@@ -374,19 +460,21 @@ function animate() {
 
     // enemy collision detection
 
-    enemies.forEach(enemy => {
+    //*********************************turn back on ********************
+
+    // enemies.forEach(enemy => {
         
-            if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
-                if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
-                    console.log("I'm HIT!!!");
-                    projectile = 0;
-                    projectilePosition = 0;
-                    start();
+    //         if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
+    //             if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
+    //                 console.log("I'm HIT!!!");
+    //                 projectile = 0;
+    //                 projectilePosition = 0;
+    //                 start();
 
                     
-                }
-            }
-    });
+    //             }
+    //         }
+    // });
 
     // end of level                    ---------- Make it more fancy
     if (scrollPosition > 7100){
@@ -457,6 +545,7 @@ function debugInfo() {
     ctx.fillText(`Position: (${karen.position.x.toFixed(1)}, ${karen.position.y.toFixed(1)})`, 10, 20);
     ctx.fillText(`Scroll: ${scrollPosition}`, 10, 40);
     ctx.fillText(`Projectile: ${projectile}`, 10, 60);
+    ctx.fillText(`Cooldown: ${endBoss.cooldown}`, 10, 80);
 }
 
 
