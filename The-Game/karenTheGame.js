@@ -11,7 +11,6 @@ const jump = document.getElementById("jump");
 const couponFire = document.getElementById("coupon-fire");
 let couponX = 0;
 let couponY = 0;
-let debug = false;
 
 //const shot = document.getElementById("shot");
 
@@ -172,7 +171,7 @@ class EnemyManager {
     positionCheck(){
         if (scrollPosition > 6700) { 
             this.onscreen = true;
-            this.wasSeen = true;dddd
+            this.wasSeen = true;
         }
         if (scrollPosition < 6000) {
             this.onscreen = false;
