@@ -23,11 +23,11 @@ images.ground.src = "level1floor.png";
 images.walls = new Image();
 images.walls.src = "walls.png";
 images.character = new Image();
-images.character.src = "productionDemo.png";
+images.character.src = "karen-sprite-sheet.png";
 images.coupon1 = new Image();
 images.coupon1.src = "coupon2.png";
 images.enemy = new Image();
-images.enemy.src = "employeeSpriteSheet1.png";
+images.enemy.src = "employee-sprite-sheet1.png";
 images.boss = new Image();
 images.boss.src = "manager-sprite-sheet2.png";
 
@@ -126,6 +126,7 @@ class EnemyManager {
         this.wasSeen = false;
         this.speed = 3;
         this.health = 16;
+        // this.health = 4; // test health
         this.cooldown = 0;
     }
     //draw functions
@@ -488,11 +489,11 @@ function animate() {
             }
     });
 
-    // end of level                    ---------- Make it more fancy
+    // end of level                    ---------- Add defeat animation
     // Check if the boss is defeated
     if (endBoss.health <= 0) {
         console.log("Boss defeated! Redirecting to the next level...");
-        window.location.href = "./karenHello.html"; // Replace with your desired URL
+        window.location.href = "./karen-wins.html";
     }
 
 
