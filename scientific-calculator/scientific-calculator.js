@@ -132,6 +132,21 @@ function zero() {
     
 }
 
+function decimal() {
+    let display = document.getElementById("display");
+    if (display.innerHTML == 0) {
+        display.innerHTML = '.';
+    }
+    if (currentFunction == ""){
+        if(display.innerHTML.includes('.')){
+            console.log('nothing happened');
+        }
+        else {
+            display.innerHTML += "."
+        }
+    }
+}
+
 function positiveNegative() {
     let display = document.getElementById("display");
     let result = "";
@@ -154,7 +169,7 @@ function positiveNegative() {
         }    
     
     }
-    console.log(result);
+    //console.log(result);
 }
 
 function add() {
