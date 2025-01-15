@@ -563,11 +563,12 @@ function debugInfo() {
     ctx.fillText(`Projectile: ${projectile}`, 10, 60);
     ctx.fillText(`boss Health: ${endBoss.health}`, 10, 80);
 }
+ 
 
 
-        
 start();
 animate();
+
 
 
 window.addEventListener("keydown", (event) => {
@@ -681,15 +682,21 @@ right.addEventListener('touchcancel', stopRight);
 
 // Handle multiple touch points
 
+
 // const handleTouchStart = (event) => {
-    // event.preventDefault();
-    // for (let touch of event.changedTouches) {
-    //     const target = document.elementFromPoint(touch.clientX, touch.clientY);
-    //     if (target === left) goLeft();
-    //     if (target === right) goRight();
-    //     if (target === jump) jumpUp();
-    //     if (target === couponFire) shootCoupon();
-    // }
+//     event.preventDefault();
+//     for (let touch of event.changedTouches) {
+//         const target = document.elementFromPoint(touch.clientX, touch.clientY);
+//         if (target === left) {
+//             goLeft();
+//         } else if (target === right) {
+//             goRight();
+//         } else if (target === jump) {
+//             jumpUp();
+//         } else if (target === couponFire) {
+//             shootCoupon();
+//         }
+//     }
 // };
 
 const handleTouchEnd = (event) => {
@@ -707,6 +714,7 @@ right.addEventListener('touchstart', handleTouchStart);
 jump.addEventListener('touchstart', handleTouchStart);
 couponFire.addEventListener('touchstart', handleTouchStart);
 // shot.addEventListener('touchstart', handleTouchStart);
+
 
 left.addEventListener('touchend', handleTouchEnd);
 right.addEventListener('touchend', handleTouchEnd);
