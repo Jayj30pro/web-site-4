@@ -32,6 +32,7 @@
     height: auto;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 5%;
 
 }
@@ -44,10 +45,50 @@
     letter-spacing: 1px;
 }
 
+#download {
+    font-size: 35px;
+    color: rgb(203, 250, 208);
+}
+
 #profile-pic {
     height: 200px;
     width: 210px;
     border-radius: 50%;
+}
+
+#download-resume-btn {
+    background-color: #295;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    transition: color 2.3s ease;
+    margin-bottom: 50px;
+}
+
+#download-resume-btn:hover {
+    background-color: #163;
+    color: #FFF;
+}
+
+#resume-section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin: 20px;
+}
+
+.resume-item {
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+    
 }
 
 
@@ -64,7 +105,7 @@
     #intro {
         height: 640px;
         width: 80%;
-        flex-direction: column;
+        
         
     
     }
