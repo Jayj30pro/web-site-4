@@ -92,8 +92,8 @@
     .section-heading {
         font-size: 30px;
         width: 100%;
-        height: 50px;
-        margin: 30px;
+        height: auto;
+        margin: 50px;
     }
     
 }
