@@ -284,6 +284,7 @@ let direction = 1;
 let projectile = 0;
 let projectilePosition = 0;
 let fire = 0;
+let debug = false;
 
 function start(){
     endBoss = new EnemyManager({x: 7500, y:400});
@@ -346,22 +347,7 @@ function animate() {
         return true; // Keep this enemy
     });
 
-    
-
-
-        // if(projectile.couponX == enemy.position.x && projectile > 0){
-        //     projectile = 0;
-        //     projectilePosition = 0;
-
-        // }
-    
-        
-
-
-
-
     // enemy collision detection
-
 
     if (karen.position.y == 440) {
         if (karen.position.x > endBoss.position.x +55 && karen.position.x < endBoss.position.x + 80){
@@ -405,7 +391,9 @@ function animate() {
 
     //experimental debugging function 
 
-    //debugInfo();
+    if (debug) {
+        debugInfo();
+    }
 
     // movement
 
@@ -557,6 +545,15 @@ function updateProjectile() {
 
 //experimental debugging function 
 
+function toggleDebug() {
+    if (debug) {
+        debug = false;
+    }
+    else {
+        debug = true;
+    }
+}
+
 function debugInfo() {
     ctx.fillStyle = "black";
     ctx.font = "16px Arial";
@@ -600,7 +597,9 @@ window.addEventListener("keydown", (event) => {
                 fire = 1;
                 fireCoupon();
             }
-            
+            break;
+        case "KeyB":
+            toggleDebug();
             break;
     }
 });
