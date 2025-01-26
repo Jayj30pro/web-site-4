@@ -315,6 +315,73 @@ function animate() {
     ctx.fillStyle = "#FFF"
     ctx.fillRect(0,0, canvas.width, canvas.height);
 
+    // coupon collision detection
+    
+    if (endBoss.attackReady == false) {
+        if(couponY > endBoss.position.y - 50 &&
+            couponY < endBoss.position.y + 50 &&
+            projectilePosition > endBoss.position.x - 20 &&
+            projectilePosition < endBoss.position.x + 20){
+                endBoss.health -= 1;
+            }
+    }
+
+
+    enemies = enemies.filter(enemy => {
+        
+        if (projectile > 0 &&
+            couponY > enemy.position.y - 50 &&
+            couponY < enemy.position.y + 50 &&
+            projectilePosition > enemy.position.x - 20 &&
+            projectilePosition < enemy.position.x + 20){
+            
+                console.log("got em!!");
+                projectile = 0;
+                projectilePosition = 0;
+                return false; // Remove this enemy
+                
+            
+        }
+            
+        return true; // Keep this enemy
+    });
+
+    
+
+
+        // if(projectile.couponX == enemy.position.x && projectile > 0){
+        //     projectile = 0;
+        //     projectilePosition = 0;
+
+        // }
+    
+        
+
+
+
+
+    // enemy collision detection
+
+
+    if (karen.position.y == 440) {
+        if (karen.position.x > endBoss.position.x +55 && karen.position.x < endBoss.position.x + 80){
+        start();
+        }
+    }
+
+    enemies.forEach(enemy => {
+        
+            if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
+                if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
+                    console.log("I'm HIT!!!");
+                    projectile = 0;
+                    projectilePosition = 0;
+                    start();
+    
+                }
+            }
+    });
+
     scenery.forEach(scene => {
         scene.draw();
     });
@@ -385,7 +452,7 @@ function animate() {
             });
             scrollPosition += karen.speed;
 
-            //add move boss right 
+            
             
         }
         else if (keys.left.pressed && scrollPosition > 0) {
@@ -422,72 +489,7 @@ function animate() {
         }
     });
 
-    // coupon collision detection
     
-    if (endBoss.attackReady == false) {
-        if(couponY > endBoss.position.y - 50 &&
-            couponY < endBoss.position.y + 50 &&
-            projectilePosition > endBoss.position.x - 20 &&
-            projectilePosition < endBoss.position.x + 20){
-                endBoss.health -= 1;
-            }
-    }
-
-
-    enemies = enemies.filter(enemy => {
-        
-        if (projectile > 0 &&
-            couponY > enemy.position.y - 50 &&
-            couponY < enemy.position.y + 50 &&
-            projectilePosition > enemy.position.x - 20 &&
-            projectilePosition < enemy.position.x + 20){
-            
-                console.log("got em!!");
-                projectile = 0;
-                projectilePosition = 0;
-                return false; // Remove this enemy
-                
-            
-        }
-            
-        return true; // Keep this enemy
-    });
-
-    
-
-
-        // if(projectile.couponX == enemy.position.x && projectile > 0){
-        //     projectile = 0;
-        //     projectilePosition = 0;
-
-        // }
-    
-        
-
-
-
-
-    // enemy collision detection
-
-
-    if (karen.position.y == 440) {
-        if (karen.position.x > endBoss.position.x +55 && karen.position.x < endBoss.position.x + 80){
-        start();
-        }
-    }
-
-    enemies.forEach(enemy => {
-        
-            if (karen.position.y > enemy.position.y - 50 && karen.position.y < enemy.position.y + 50){
-                if (karen.position.x > enemy.position.x - 10 && karen.position.x < enemy.position.x + 10) {
-                    console.log("I'm HIT!!!");
-                    projectile = 0;
-                    projectilePosition = 0;
-                    start();
-    
-                }
-            }
-    });
 
     // end of level                    ---------- Add defeat animation
     // Check if the boss is defeated
