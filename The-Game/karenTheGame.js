@@ -12,8 +12,6 @@ const couponFire = document.getElementById("coupon-fire");
 let couponX = 0;
 let couponY = 0;
 
-//const shot = document.getElementById("shot");
-
 
 const images = {};
 images.bar = new Image();
