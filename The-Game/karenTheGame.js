@@ -12,7 +12,6 @@ const couponFire = document.getElementById("coupon-fire");
 let couponX = 0;
 let couponY = 0;
 
-
 const images = {};
 images.bar = new Image();
 images.bar.src = "burgerPlace.png";
@@ -28,9 +27,6 @@ images.enemy = new Image();
 images.enemy.src = "employee-sprite-sheet1.png";
 images.boss = new Image();
 images.boss.src = "manager-sprite-sheet2.png";
-
-
-
 
 
 class Player {
