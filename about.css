@@ -91,6 +91,16 @@
     
 }
 
+#contact-section {
+    width: 100%;
+    text-align: center;
+}
+#contact-info {
+    font-size: 35px;
+    font-weight: bolder;
+    color: rgb(203, 250, 208);
+}
+
 
 
 @media (max-width: 1000px) {
@@ -102,11 +112,5 @@
         max-height: 640px;
     }
 
-    #intro {
-        height: 640px;
-        width: 80%;
-        
-        
-    
-    }
+
 }
