@@ -51,8 +51,7 @@
 
 .certs-area {
     height: auto;
-    width: 90%;
-    transform: translate(5%, 0%);
+    width: 100%;
     filter: opacity(0.85);
     display: flex;
     flex-wrap: wrap;
@@ -104,6 +103,20 @@
     margin: 20px;
 }
 
+#code-wars {
+    margin: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+#code-wars-badge{
+    width: 50%;
+}
+
 
 
 @media (max-width: 1000px) {
@@ -121,6 +134,10 @@
         width: 100%;
         height: auto;
         margin: 50px;
+    }
+
+    #code-wars-badge{
+        width: 100%;
     }
     
 }
