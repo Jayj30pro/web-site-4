@@ -11,4 +11,9 @@
     width: 350px;
     height: 225px;
     margin: 25px;
+    transition: ease-in 0.75s ;
+}
+
+.entry-picture:hover {
+    transform: scale(1.5);
 }

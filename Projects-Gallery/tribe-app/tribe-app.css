@@ -1,0 +1,30 @@
+#pictures {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    
+}
+
+.entry-picture {
+    width: 350px;
+    height: 225px;
+    margin: 25px;
+    transition: ease-in 0.75s ;
+}
+
+.entry-picture:hover {
+    transform: scale(1.5);
+}
+
+/* .cert-image {
+    width: 300px;
+    height: 200px;
+    transition: ease-in 0.75s ;
+    margin: 25px;
+}
+
+.cert-image:hover {
+    transform: scale(1.5);
+} */
