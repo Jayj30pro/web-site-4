@@ -115,8 +115,6 @@
     width: 50%;
 }
 
-
-
 @media (max-width: 1000px) {
     #back-drop {
         background-repeat: repeat-y;
