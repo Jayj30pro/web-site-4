@@ -145,6 +145,16 @@ function decimal() {
             display.innerHTML += "."
         }
     }
+    else {
+        if (currentFunction != ""){
+            let mathProblem = display.innerHTML.split(" ");
+            firstNumber = Number(mathProblem[0]);
+            activeFunction = mathProblem[1];
+            secondNumber = Number(mathProblem[2]);
+            secondNumber += ".";
+            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+        }    
+    }
 }
 
 function positiveNegative() {
@@ -169,7 +179,6 @@ function positiveNegative() {
         }    
     
     }
-    //console.log(result);
 }
 
 function add() {

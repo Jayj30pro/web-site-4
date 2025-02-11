@@ -65,7 +65,8 @@ body {
     height: 60%;
     font-size: 30px;
     font-weight: 900;
-    background-color: #D75;
+    background-color: #CCC;
+    border-radius: 10px;
 }
 
 #back {
