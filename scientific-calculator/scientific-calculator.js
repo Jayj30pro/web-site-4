@@ -157,6 +157,32 @@ function decimal() {
     }
 }
 
+function percent() {
+    let display = document.getElementById("display");
+    
+    if (display.innerHTML != 0) {
+
+        if (currentFunction == ""){
+            
+            let temp = Number(display.innerHTML); 
+            temp *= 0.01;
+            display.innerHTML = temp;
+
+            
+        }
+        else {
+            if (currentFunction != ""){
+                let mathProblem = display.innerHTML.split(" ");
+                firstNumber = Number(mathProblem[0]);
+                activeFunction = mathProblem[1];
+                secondNumber = Number(mathProblem[2]);
+                secondNumber *= 0.01;
+                display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+            }    
+        }
+    }
+}
+
 function positiveNegative() {
     let display = document.getElementById("display");
     let result = "";
@@ -186,8 +212,6 @@ function add() {
         currentFunction = "+";
         display.innerHTML += " + ";
     }
-    
-
 }
 
 function subtract() {
@@ -239,8 +263,8 @@ function equals() {
                 display.innerHTML = firstNumber / secondNumber;
                 break;
         }
-        //log 
-        console.log(mathProblem);
+        //console.log(mathProblem);
+        
         currentFunction = "";
     
     }
