@@ -12,41 +12,99 @@ function clearScreen() {
     currentFunction = ""
 }
 
-function one() {
+
+
+
+
+
+
+
+function percent() {
+    let display = document.getElementById("display");
+    
+    if (display.innerHTML != 0) {
+
+        if (currentFunction == ""){
+            
+            let temp = Number(display.innerHTML); 
+            temp *= 0.01;
+            display.innerHTML = temp;
+
+            
+        }
+        else {
+            if (currentFunction != ""){
+                let mathProblem = display.innerHTML.split(" ");
+                firstNumber = Number(mathProblem[0]);
+                activeFunction = mathProblem[1];
+                secondNumber = Number(mathProblem[2]);
+                secondNumber *= 0.01;
+                display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+            }    
+        }
+    }
+}
+
+function exponent() {
+    if (currentFunction == ""){
+        currentFunction = "^";
+        display.innerHTML += " ^ ";
+    }
+}
+
+function divide() {
+    if (currentFunction == ""){
+        currentFunction = "/";
+        display.innerHTML += " / ";
+    }
+    
+
+}
+
+
+function seven() {
     let display = document.getElementById("display");
     
     if (display.innerHTML == 0) {
-        display.innerHTML = 1;
+        display.innerHTML = 7;
     }
     else {
-        display.innerHTML += 1;
+        display.innerHTML += 7;
     }
     
 }
 
-function two() {
+function eight() {
     let display = document.getElementById("display");
     
     if (display.innerHTML == 0) {
-        display.innerHTML = 2;
+        display.innerHTML = 8;
     }
     else {
-        display.innerHTML += 2;
+        display.innerHTML += 8;
     }
     
 }
 
-function three() {
+function nine() {
     let display = document.getElementById("display");
     
     if (display.innerHTML == 0) {
-        display.innerHTML = 3;
+        display.innerHTML = 9;
     }
     else {
-        display.innerHTML += 3;
+        display.innerHTML += 9;
     }
     
 }
+
+function multiply() {
+    if (currentFunction == ""){
+        currentFunction = "*";
+        display.innerHTML += " * ";
+    }
+}
+
 
 function four() {
     let display = document.getElementById("display");
@@ -84,40 +142,80 @@ function six() {
     
 }
 
-function seven() {
+function subtract() {
+    if (currentFunction == ""){
+        currentFunction = "-";
+        display.innerHTML += " - ";
+    }
+}
+
+
+function one() {
     let display = document.getElementById("display");
     
     if (display.innerHTML == 0) {
-        display.innerHTML = 7;
+        display.innerHTML = 1;
     }
     else {
-        display.innerHTML += 7;
+        display.innerHTML += 1;
     }
     
 }
 
-function eight() {
+function two() {
     let display = document.getElementById("display");
     
     if (display.innerHTML == 0) {
-        display.innerHTML = 8;
+        display.innerHTML = 2;
     }
     else {
-        display.innerHTML += 8;
+        display.innerHTML += 2;
     }
     
 }
 
-function nine() {
+function three() {
     let display = document.getElementById("display");
     
     if (display.innerHTML == 0) {
-        display.innerHTML = 9;
+        display.innerHTML = 3;
     }
     else {
-        display.innerHTML += 9;
+        display.innerHTML += 3;
     }
     
+}
+
+function add() {
+    if (currentFunction == ""){
+        currentFunction = "+";
+        display.innerHTML += " + ";
+    }
+}
+
+
+function positiveNegative() {
+    let display = document.getElementById("display");
+    let result = "";
+    // first number
+    if (currentFunction == ""){
+        let currentNumber = (display.innerHTML);
+        negativeNumber = currentNumber;
+        negativeNumber *= -1;
+        display.innerHTML = negativeNumber;
+    }
+    // second number
+    else {
+        if (currentFunction != ""){
+            let mathProblem = display.innerHTML.split(" ");
+            firstNumber = Number(mathProblem[0]);
+            activeFunction = mathProblem[1];
+            secondNumber = Number(mathProblem[2]);
+            secondNumber *= -1;
+            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+        }    
+    
+    }
 }
 
 function zero() {
@@ -157,86 +255,6 @@ function decimal() {
     }
 }
 
-function percent() {
-    let display = document.getElementById("display");
-    
-    if (display.innerHTML != 0) {
-
-        if (currentFunction == ""){
-            
-            let temp = Number(display.innerHTML); 
-            temp *= 0.01;
-            display.innerHTML = temp;
-
-            
-        }
-        else {
-            if (currentFunction != ""){
-                let mathProblem = display.innerHTML.split(" ");
-                firstNumber = Number(mathProblem[0]);
-                activeFunction = mathProblem[1];
-                secondNumber = Number(mathProblem[2]);
-                secondNumber *= 0.01;
-                display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
-            }    
-        }
-    }
-}
-
-function positiveNegative() {
-    let display = document.getElementById("display");
-    let result = "";
-    // first number
-    if (currentFunction == ""){
-        let currentNumber = (display.innerHTML);
-        negativeNumber = currentNumber;
-        negativeNumber *= -1;
-        display.innerHTML = negativeNumber;
-    }
-    // second number
-    else {
-        if (currentFunction != ""){
-            let mathProblem = display.innerHTML.split(" ");
-            firstNumber = Number(mathProblem[0]);
-            activeFunction = mathProblem[1];
-            secondNumber = Number(mathProblem[2]);
-            secondNumber *= -1;
-            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
-        }    
-    
-    }
-}
-
-function add() {
-    if (currentFunction == ""){
-        currentFunction = "+";
-        display.innerHTML += " + ";
-    }
-}
-
-function subtract() {
-    if (currentFunction == ""){
-        currentFunction = "-";
-        display.innerHTML += " - ";
-    }
-}
-
-function divide() {
-    if (currentFunction == ""){
-        currentFunction = "/";
-        display.innerHTML += " / ";
-    }
-    
-
-}
-
-function multiply() {
-    if (currentFunction == ""){
-        currentFunction = "*";
-        display.innerHTML += " * ";
-    }
-}
-
 function equals() {
     let display = document.getElementById("display");
     if (currentFunction == ""){
@@ -261,6 +279,10 @@ function equals() {
         
             case "/":
                 display.innerHTML = firstNumber / secondNumber;
+                break;
+
+            case "^":
+                display.innerHTML = Math.pow(firstNumber, secondNumber);
                 break;
         }
         //console.log(mathProblem);

@@ -1,7 +1,12 @@
 #projects-page {
     background-color: #181818;
-    color: #FFF;
+    color: rgb(203, 250, 208);
     font-family: 'Times New Roman', Times, serif;
+}
+
+a {
+    color: rgb(203, 250, 208);
+    
 }
 
 
@@ -39,8 +44,7 @@
 
 #project-show-case a {
     text-decoration: none;
-    color: #fff;
-    
+    color: rgb(203, 250, 208);
 }
 
 .project-tile {
