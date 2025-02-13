@@ -55,8 +55,7 @@
     filter: opacity(0.85);
     display: flex;
     flex-wrap: wrap;
-    justify-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin-bottom: 150px;
     margin-top: 150px;
