@@ -12,13 +12,6 @@ function clearScreen() {
     currentFunction = ""
 }
 
-
-
-
-
-
-
-
 function percent() {
     let display = document.getElementById("display");
     
