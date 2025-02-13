@@ -33,7 +33,7 @@ a:visited {
     justify-content: center;
     height: 80vh;
     width: 90vw;
-    background-color: #909;
+    background-color: #181818;
 
 }
 
@@ -54,6 +54,7 @@ a:visited {
     width: 95%;
     height: 90%;
     font-size: 30px;
+    border-radius: 10px;
 }
 
 #button-area {
@@ -77,12 +78,12 @@ a:visited {
 }
 
 .calculator-button {
-    color: #000;
+    color: #181818;
     width: 12.5%;
     height: 60%;
     font-size: 30px;
     font-weight: 900;
-    background-color: #CCC;
+    background-color:  rgb(203, 250, 208);
     border-radius: 10px;
 }
 
