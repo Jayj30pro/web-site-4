@@ -8,26 +8,29 @@
 </head>
 <body>
     <div id="game-area">
-        
         <div id="text-area">
-        <p id="message" class="display-text"> Make your selection </p><br/>
-        <p id="computer-selection" class="display-text"></p><br/>
-        <br><p id="results" class="display-text"></p>
+            <p id="message" class="display-text"> Make your selection </p>
+            <p id="computer-selection" class="display-text"></p>
+            <p id="results" class="display-text"></p>
         </div>
-        <div id="rock">
+    
+        <div id="rock" class="game-option">
             <img src="../Icons/rock.jpeg" class="game-icon" alt="rock"/>
-            <div class="game-button"><button onclick="selectRock()"> Rock </button> </div>
+            <div class="game-button"><button onclick="playerSelect('rock')"> Rock </button></div>
         </div>
-        <div id="paper">
+    
+        <div id="paper" class="game-option">
             <img src="../Icons/paper.jpeg" class="game-icon" alt="paper"/>
-            <div class="game-button"><button onclick="selectPaper()"> Paper </button> </div>
+            <div class="game-button"><button onclick="playerSelect('paper')"> Paper </button></div>
         </div>
-        <div id="scissors">
+    
+        <div id="scissors" class="game-option">
             <img src="../Icons/scissors.jpeg" class="game-icon" alt="scissors"/>
-            <div class="game-button"><button onclick="selectScissors()"> Scissors </button> </div>
+            <div class="game-button"><button onclick="playerSelect('scissors')"> Scissors </button></div>
         </div>
-    </div>    
-    <a href="../projects.html"> <button> Back to Projects</button> </a>
+        <a href="../projects.html" id="back"><button> Back to Projects</button> </a>
+    </div>   
+    
 
     <script src="rock-paper-scissors.js"></script>
 </body>

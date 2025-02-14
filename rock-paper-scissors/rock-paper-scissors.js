@@ -2,21 +2,10 @@
 let palyerChoice = "";
 let info =  document.getElementById("message");
 
-function selectRock() {
-    info.innerHTML = "You selected rock";
-    palyerChoice = "rock";
-    computerSelect();
-}
 
-function selectPaper() {
-    info.innerHTML = "You selected paper";
-    palyerChoice = "paper";
-    computerSelect();
-}
-
-function selectScissors() {
-    info.innerHTML = "You selected scissors";
-    palyerChoice = "scissors";
+function playerSelect(choice) {
+    info.innerHTML = `You selected, ${choice}`;
+    palyerChoice = choice;
     computerSelect();
 }
 
