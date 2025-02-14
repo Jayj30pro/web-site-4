@@ -58,8 +58,10 @@ body {
 
 .game-button button {
     font-size: 20px;
+    font-weight: bolder;
     padding: 10px;
-    background-color: rgb(203, 250, 208);
+    color: rgb(203, 250, 208);
+    background-color: #181818;
     border: none;
     cursor: pointer;
     margin-top: 10px;
@@ -67,7 +69,8 @@ body {
 }
 
 .game-button button:hover {
-    background-color: rgb(160, 230, 170);
+    background-color: rgb(203, 250, 208);
+    color: #181818;
 }
 
 #back{
@@ -78,12 +81,21 @@ body {
 
 #back button {
     font-size: 20px;
+    font-weight: bolder;
     padding: 10px;
-    background-color: rgb(203, 250, 208);
+    color: rgb(203, 250, 208);
+    background-color: #181818;
     border: none;
     cursor: pointer;
     margin-top: 10px;
     border-radius: 5px;
+    transition: transform 0.5s ease;
+}
+
+#back button:hover {
+    transform: scale(1.05);
+    color: #181818;
+    background-color: rgb(203, 250, 208);
 }
 
 @media (max-width: 1000px) {
