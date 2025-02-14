@@ -26,10 +26,11 @@ body {
     margin-bottom: 20px;
     width: 100%;
     text-shadow: 0 0 5px rgb(203, 250, 208);
+    text-shadow: 0 0 15px #000);
 }
 
 .display-text {
-    font-size: 70px;
+    font-size: 50px;
     margin: 5px 0;
 }
 
@@ -41,7 +42,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
+    transition: transform 0.5s ease;
 }
 
 .game-option:hover {
@@ -83,4 +84,10 @@ body {
     cursor: pointer;
     margin-top: 10px;
     border-radius: 5px;
+}
+
+@media (max-width: 1000px) {
+    #game-area {
+        justify-content: flex-start;
+}
 }
