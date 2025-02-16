@@ -101,5 +101,5 @@ body {
 @media (max-width: 1000px) {
     #game-area {
         justify-content: flex-start;
-}
+    }
 }
