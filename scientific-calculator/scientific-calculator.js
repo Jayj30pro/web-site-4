@@ -25,17 +25,15 @@ function mathPi() {
         firstNumber = Number(mathProblem[0]);
         activeFunction = mathProblem[1];
         secondNumber = Number(mathProblem[2]);
-        console.log(secondNumber)
         if (secondNumber == 0) {
             secondNumber = Math.PI;
+            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
         }
-       display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+       
 
     }
 
-    else {
-        display.innerHTML += Math.PI;
-    }
+    
 }
 
 function percent() {
