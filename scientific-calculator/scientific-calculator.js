@@ -1,15 +1,10 @@
 let firstNumber = 0;
 let secondNumber = 0;
 let currentFunction = "";
-
-
-function splitNumbers(displayContent){
-    
-}
-
+let display = document.getElementById("display");
 
 function clearScreen() {
-    let display = document.getElementById("display");
+    
     
     display.innerHTML = 0;
     firstNumber = 0;
@@ -18,7 +13,7 @@ function clearScreen() {
 }
 
 function mathPi() {
-    let display = document.getElementById("display");
+    
 
     if (display.innerHTML == 0) {
         display.innerHTML = Math.PI;
@@ -42,7 +37,7 @@ function mathPi() {
 }
 
 function percent() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML != 0) {
 
@@ -84,8 +79,16 @@ function divide() {
 }
 
 
+function squareRoot() {
+    if (currentFunction == ""){
+        rootStart = Number(display.innerHTML);
+        rootEnd = Math.sqrt(rootStart);
+        display.innerHTML = rootEnd;
+    }
+}
+
 function seven() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 7;
@@ -97,7 +100,7 @@ function seven() {
 }
 
 function eight() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 8;
@@ -109,7 +112,7 @@ function eight() {
 }
 
 function nine() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 9;
@@ -129,7 +132,7 @@ function multiply() {
 
 
 function four() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 4;
@@ -141,7 +144,7 @@ function four() {
 }
 
 function five() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 5;
@@ -153,7 +156,7 @@ function five() {
 }
 
 function six() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 6;
@@ -173,7 +176,7 @@ function subtract() {
 
 
 function one() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 1;
@@ -185,7 +188,7 @@ function one() {
 }
 
 function two() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 2;
@@ -197,7 +200,7 @@ function two() {
 }
 
 function three() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 3;
@@ -217,7 +220,7 @@ function add() {
 
 
 function positiveNegative() {
-    let display = document.getElementById("display");
+    
     let result = "";
     // first number
     if (currentFunction == ""){
@@ -241,7 +244,7 @@ function positiveNegative() {
 }
 
 function zero() {
-    let display = document.getElementById("display");
+    
     
     if (display.innerHTML == 0) {
         display.innerHTML = 0;
@@ -253,7 +256,7 @@ function zero() {
 }
 
 function decimal() {
-    let display = document.getElementById("display");
+    
     if (display.innerHTML == 0) {
         display.innerHTML = '.';
     }
@@ -278,7 +281,7 @@ function decimal() {
 }
 
 function equals() {
-    let display = document.getElementById("display");
+    
     if (currentFunction == ""){
         console.log("pick a function first");
     }
