@@ -4,8 +4,7 @@ let currentFunction = "";
 let display = document.getElementById("display");
 
 function clearScreen() {
-    
-    
+
     display.innerHTML = 0;
     firstNumber = 0;
     secondNumber = 0;
@@ -14,7 +13,6 @@ function clearScreen() {
 
 function mathPi() {
     
-
     if (display.innerHTML == 0) {
         display.innerHTML = Math.PI;
     }
@@ -29,15 +27,10 @@ function mathPi() {
             secondNumber = Math.PI;
             display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
         }
-       
-
     }
-
-    
 }
 
 function percent() {
-    
     
     if (display.innerHTML != 0) {
 
