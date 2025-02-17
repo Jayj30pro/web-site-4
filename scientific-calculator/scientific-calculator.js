@@ -12,6 +12,32 @@ function clearScreen() {
     currentFunction = ""
 }
 
+function mathPi() {
+    let display = document.getElementById("display");
+
+    if (display.innerHTML == 0) {
+        display.innerHTML = Math.PI;
+    }
+
+    else if (currentFunction != ""){
+        
+        let mathProblem = display.innerHTML.split(" ");
+        firstNumber = Number(mathProblem[0]);
+        activeFunction = mathProblem[1];
+        secondNumber = Number(mathProblem[2]);
+        console.log(secondNumber)
+        if (secondNumber == 0) {
+            secondNumber = Math.PI;
+        }
+       display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+
+    }
+
+    else {
+        display.innerHTML += Math.PI;
+    }
+}
+
 function percent() {
     let display = document.getElementById("display");
     
