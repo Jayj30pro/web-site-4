@@ -3,6 +3,11 @@ let secondNumber = 0;
 let currentFunction = "";
 
 
+function splitNumbers(displayContent){
+    
+}
+
+
 function clearScreen() {
     let display = document.getElementById("display");
     
