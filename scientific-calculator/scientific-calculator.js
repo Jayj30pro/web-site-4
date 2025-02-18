@@ -124,6 +124,14 @@ function multiply() {
 }
 
 
+function sin() {
+    if (currentFunction == ""){
+        sinStart = Number(display.innerHTML);
+        sinEnd = Math.sin(sinStart);
+        display.innerHTML = sinEnd;
+    }
+}
+
 function four() {
     
     
