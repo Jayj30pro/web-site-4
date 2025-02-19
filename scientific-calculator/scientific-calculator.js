@@ -13,8 +13,23 @@ function clearScreen() {
     currentFunction = ""
 }
 
-function factorial () { //finish
+function mathPi() {
+    
+    if (display.innerHTML == 0) {
+        display.innerHTML = Math.PI;
+    }
 
+    else if (currentFunction != ""){
+        
+        let mathProblem = display.innerHTML.split(" ");
+        firstNumber = Number(mathProblem[0]);
+        activeFunction = mathProblem[1];
+        secondNumber = Number(mathProblem[2]);
+        if (secondNumber == 0) {
+            secondNumber = Math.PI;
+            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+        }
+    }
 }
 
 function percent() {
@@ -72,22 +87,15 @@ function divide() {
 
 
 
-function mathPi() {
-    
-    if (display.innerHTML == 0) {
-        display.innerHTML = Math.PI;
-    }
+function factorial() { //finish
 
-    else if (currentFunction != ""){
-        
-        let mathProblem = display.innerHTML.split(" ");
-        firstNumber = Number(mathProblem[0]);
-        activeFunction = mathProblem[1];
-        secondNumber = Number(mathProblem[2]);
-        if (secondNumber == 0) {
-            secondNumber = Math.PI;
-            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
-        }
+}
+
+function reciprical() {
+    if (currentFunction == ""){
+        recStart = Number(display.innerHTML);
+        recEnd = 1 / recStart;
+        display.innerHTML = recEnd;
     }
 }
 
@@ -204,6 +212,7 @@ function subtract() {
 }
 
 
+
 function exponent() {
     if (currentFunction == ""){
         currentFunction = "^";
@@ -261,6 +270,7 @@ function add() {
         display.innerHTML += " + ";
     }
 }
+
 
 
 function log() {
