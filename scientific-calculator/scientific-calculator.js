@@ -2,6 +2,8 @@ let firstNumber = 0;
 let secondNumber = 0;
 let currentFunction = "";
 let display = document.getElementById("display");
+let numberMemory = 0;
+let memoryDisplay = document.getElementById("memory-indicator");
 
 function clearScreen() {
 
@@ -11,23 +13,8 @@ function clearScreen() {
     currentFunction = ""
 }
 
-function mathPi() {
-    
-    if (display.innerHTML == 0) {
-        display.innerHTML = Math.PI;
-    }
+function factorial () { //finish
 
-    else if (currentFunction != ""){
-        
-        let mathProblem = display.innerHTML.split(" ");
-        firstNumber = Number(mathProblem[0]);
-        activeFunction = mathProblem[1];
-        secondNumber = Number(mathProblem[2]);
-        if (secondNumber == 0) {
-            secondNumber = Math.PI;
-            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
-        }
-    }
 }
 
 function percent() {
@@ -55,11 +42,23 @@ function percent() {
     }
 }
 
-function exponent() {
-    if (currentFunction == ""){
-        currentFunction = "^";
-        display.innerHTML += " ^ ";
+function memoryAdd(){
+    numberMemory = Number(display.innerHTML );
+    if (numberMemory != 0) {
+        memoryDisplay.innerHTML = "M";
     }
+}
+
+function memoryRecall() {
+    if (numberMemory != 0) {
+        display.innerHTML = numberMemory;
+    }
+
+}
+
+function memoryClear() {
+    numberMemory = 0;
+    memoryDisplay.innerHTML = "";
 }
 
 function divide() {
@@ -71,6 +70,26 @@ function divide() {
 
 }
 
+
+
+function mathPi() {
+    
+    if (display.innerHTML == 0) {
+        display.innerHTML = Math.PI;
+    }
+
+    else if (currentFunction != ""){
+        
+        let mathProblem = display.innerHTML.split(" ");
+        firstNumber = Number(mathProblem[0]);
+        activeFunction = mathProblem[1];
+        secondNumber = Number(mathProblem[2]);
+        if (secondNumber == 0) {
+            secondNumber = Math.PI;
+            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+        }
+    }
+}
 
 function squareRoot() {
     if (currentFunction == ""){
@@ -124,6 +143,15 @@ function multiply() {
 }
 
 
+
+function square() {
+    if (currentFunction == ""){
+        sqStart = Number(display.innerHTML);
+        sqEnd = Math.pow(sqStart, 2);
+        display.innerHTML = sqEnd;
+    }
+}
+
 function sin() {
     if (currentFunction == ""){
         sinStart = Number(display.innerHTML);
@@ -176,6 +204,21 @@ function subtract() {
 }
 
 
+function exponent() {
+    if (currentFunction == ""){
+        currentFunction = "^";
+        display.innerHTML += " ^ ";
+    }
+}
+
+function cos() {
+    if (currentFunction == ""){
+        cosStart = Number(display.innerHTML);
+        cosEnd = Math.cos(cosStart);
+        display.innerHTML = cosEnd;
+    }
+}
+
 function one() {
     
     
@@ -219,6 +262,22 @@ function add() {
     }
 }
 
+
+function log() {
+    if (currentFunction == ""){
+        logStart = Number(display.innerHTML);
+        logEnd = Math.log(logStart);
+        display.innerHTML = logEnd;
+    }
+}
+
+function tan() {
+    if (currentFunction == ""){
+        tanStart = Number(display.innerHTML);
+        tanEnd = Math.tan(tanStart);
+        display.innerHTML = tanEnd;
+    }
+}
 
 function positiveNegative() {
     

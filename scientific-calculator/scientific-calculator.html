@@ -13,22 +13,23 @@
     <div id="main-container">
         <div id="main-display">
             <div id="display-screen">
-                <p id="display">0</p>
+                <div id="memory-indicator"></div>
+                <div id="display">0</div>
             </div>
         </div>
         <div id="button-area">
             <div class="button-row">
                 <button class="calculator-button" onclick="clearScreen()"> C </button>
-                <!-- <button class="calculator-button" onclick=""> ? </button>
-                <button class="calculator-button" onclick=""> ? </button> -->
-                <button class="calculator-button" onclick="mathPi()"> &pi; </button> 
+                <button class="calculator-button" onclick="mathPi()"> &pi; </button>
                 <button class="calculator-button" onclick="percent()"> % </button>
-                <button class="calculator-button" onclick="exponent()"> ^ </button>
+                <button class="calculator-button" onclick="memoryAdd()"> M+ </button>
+                <button class="calculator-button" onclick="memoryRecall()"> MR </button>
+                <button class="calculator-button" onclick="memoryClear()"> MC </button>
                 <button class="calculator-button" onclick="divide()"> / </button>
             </div>
             <div class="button-row">
-                <!-- <button class="calculator-button" onclick=""> ? </button>
-                <button class="calculator-button" onclick=""> ? </button> -->
+                <button class="calculator-button" onclick=""> i </button>
+                <button class="calculator-button" onclick=""> 1/x </button>
                 <button class="calculator-button" onclick="squareRoot()"> &radic; </button> 
                 <button class="calculator-button" onclick="seven()"> 7 </button>
                 <button class="calculator-button" onclick="eight()"> 8 </button>
@@ -36,8 +37,8 @@
                 <button class="calculator-button" onclick="multiply()"> X </button>
             </div>
             <div class="button-row">
-                <!-- <button class="calculator-button" onclick=""> ? </button>
-                <button class="calculator-button" onclick=""> ? </button> -->
+                <button class="calculator-button" onclick=""> ? </button>
+                <button class="calculator-button" onclick="square()"> x^2 </button>
                 <button class="calculator-button" onclick="sin()"> sin </button> 
                 <button class="calculator-button" onclick="four()"> 4 </button>
                 <button class="calculator-button" onclick="five()"> 5 </button>
@@ -45,18 +46,18 @@
                 <button class="calculator-button" onclick="subtract()"> - </button>
             </div>
             <div class="button-row">
-                <!-- <button class="calculator-button" onclick=""> ? </button>
-                <button class="calculator-button" onclick=""> ? </button> -->
-                <button class="calculator-button" onclick=""> ? </button> 
+                <button class="calculator-button" onclick=""> ? </button>
+                <button class="calculator-button" onclick="exponent()"> x^y </button>
+                <button class="calculator-button" onclick="cos()"> cos </button> 
                 <button class="calculator-button" onclick="one()"> 1 </button>
                 <button class="calculator-button" onclick="two()"> 2 </button>
                 <button class="calculator-button" onclick="three()"> 3 </button>
                 <button class="calculator-button" onclick="add()"> + </button>
             </div>
             <div class="button-row">
-                <!-- <button class="calculator-button" onclick=""> ? </button>
-                <button class="calculator-button" onclick=""> ? </button> -->
-                <button class="calculator-button" onclick=""> ? </button> 
+                <button class="calculator-button" onclick=""> ? </button>
+                <button class="calculator-button" onclick="log()"> log </button>
+                <button class="calculator-button" onclick="tan()"> tan </button> 
                 <button class="calculator-button" onclick="positiveNegative()"> +/- </button>
                 <button class="calculator-button" onclick="zero()"> 0 </button>
                 <button class="calculator-button" onclick="decimal()"> . </button>
