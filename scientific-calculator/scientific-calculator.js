@@ -87,8 +87,14 @@ function divide() {
 
 
 
-function factorial() { //finish
 
+
+function log() {
+    if (currentFunction == ""){
+        logStart = Number(display.innerHTML);
+        logEnd = Math.log(logStart);
+        display.innerHTML = logEnd;
+    }
 }
 
 function reciprical() {
@@ -151,12 +157,26 @@ function multiply() {
 }
 
 
+function naturalLog() {
+    if (currentFunction == "") {
+        let lnStart = Number(display.innerHTML);
+        let lnEnd = Math.log(lnStart);
+        display.innerHTML = lnEnd;
+    }
+}
 
-function square() {
-    if (currentFunction == ""){
-        sqStart = Number(display.innerHTML);
-        sqEnd = Math.pow(sqStart, 2);
-        display.innerHTML = sqEnd;
+function factorial() {
+    if (currentFunction == "") {
+        let factStart = Number(display.innerHTML);
+        if (factStart < 0 || !Number.isInteger(factStart)) {
+            display.innerHTML = "Error";
+        } else {
+            let factResult = 1;
+            for (let i = 1; i <= factStart; i++) {
+                factResult *= i;
+            }
+            display.innerHTML = factResult;
+        }
     }
 }
 
@@ -213,10 +233,26 @@ function subtract() {
 
 
 
-function exponent() {
+function mathE() {
+    if (display.innerHTML == 0) {
+        display.innerHTML = Math.E;
+    } else if (currentFunction != "") {
+        let mathProblem = display.innerHTML.split(" ");
+        firstNumber = Number(mathProblem[0]);
+        activeFunction = mathProblem[1];
+        secondNumber = Number(mathProblem[2]);
+        if (secondNumber == 0) {
+            secondNumber = Math.E;
+            display.innerHTML = firstNumber + " " + activeFunction + " " + secondNumber;
+        }
+    }
+}
+
+function square() {
     if (currentFunction == ""){
-        currentFunction = "^";
-        display.innerHTML += " ^ ";
+        sqStart = Number(display.innerHTML);
+        sqEnd = Math.pow(sqStart, 2);
+        display.innerHTML = sqEnd;
     }
 }
 
@@ -273,11 +309,17 @@ function add() {
 
 
 
-function log() {
+function absoluteValue() {
+    if (currentFunction == "") {
+        let absValue = Math.abs(Number(display.innerHTML));
+        display.innerHTML = absValue;
+    }
+}
+
+function exponent() {
     if (currentFunction == ""){
-        logStart = Number(display.innerHTML);
-        logEnd = Math.log(logStart);
-        display.innerHTML = logEnd;
+        currentFunction = "^";
+        display.innerHTML += " ^ ";
     }
 }
 
