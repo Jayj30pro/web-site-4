@@ -1,5 +1,5 @@
 body {
-    color: #181818;
+    color: #FFF;
     height: 100vh;
     margin: 0;
     font-weight: bolder;
@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url(rps-images/rps-background-image.jpeg);
+    background-image: url(rps-images/rps-background-image1.webp);
     background-size: 100% 100%;
     background-position: center;
     padding: 20px;
@@ -25,14 +25,15 @@ body {
     text-align: center;
     margin-bottom: 20px;
     width: 100%;
-    text-shadow: 0 0 5px rgb(203, 250, 208);
+    text-shadow: 0 0 5px #000;
     text-shadow: 0 0 15px #000;
-    background-color: #FFF;
+    
 }
 
 .display-text {
     font-size: 50px;
     margin: 5px 0;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .game-option {
