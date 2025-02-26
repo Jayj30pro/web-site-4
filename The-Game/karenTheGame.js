@@ -98,8 +98,6 @@ class EnemyCrew {
     }   
 }
 
-// add Boss enemy
-    
 class EnemyManager {
     constructor({ x, y }) {
         this.position = {
