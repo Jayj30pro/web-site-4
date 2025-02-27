@@ -118,7 +118,6 @@ class EnemyManager {
         this.wasSeen = false;
         this.speed = 3;
         this.health = 16;
-        // this.health = 4; // test health
         this.cooldown = 0;
     }
     //draw functions
