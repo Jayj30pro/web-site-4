@@ -210,8 +210,6 @@ class EnemyManager {
                 this.cooldown = 0;
                 
             }
-            
-
         }
     }
 }
