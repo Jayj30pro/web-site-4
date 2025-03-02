@@ -209,7 +209,7 @@ class EnemyManager {
                 this.wasSeen = false;
                 this.cooldown = 0;
                 
-            }
+            }                                                       
         }
     }
 }
