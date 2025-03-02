@@ -98,6 +98,8 @@ class EnemyCrew {
     }   
 }
 
+// manager enemy 
+
 class EnemyManager {
     constructor({ x, y }) {
         this.position = {
@@ -214,7 +216,6 @@ class EnemyManager {
     }
 }
 
-
 class Platform {
     constructor({ x, y }) {
         this.position = {
@@ -296,7 +297,6 @@ const keys = {
         pressed: false
     }
 }
-
 
 //**************************/ animaiton loop **************************************************
 
@@ -556,7 +556,6 @@ function debugInfo() {
 
 start();
 animate();
-
 
 
 window.addEventListener("keydown", (event) => {
